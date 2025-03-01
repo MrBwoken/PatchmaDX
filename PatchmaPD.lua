@@ -13,7 +13,12 @@
         [                                     ]
         [-                                   -]
         ---------------------------------------
-   	
+
+
+       Normal Loadstring:
+       loadstring(gams:HttpGet("https://raw.githubusercontent.com/MrBwoken/PatchmaPDEDITION/refs/heads/main/PatchmaPD.lua"))()
+       Testing Loadstring:
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/MrBwoken/PatchmaPDEDITION/refs/heads/PatchmaPD-TESTING/PatchmaPD.lua"))()
 
 ]]
 
