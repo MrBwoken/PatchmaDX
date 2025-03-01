@@ -17,6 +17,34 @@
 
 ]]
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 -- 23:08 no sleep coding adventures
 -- wdym i have replicatesignal fuck roblox!! grrhhgfj i just wanna sleep
 -- 32:19 asked gpt for help finally got it to work mghnm i knew it getgenv but forgot :c
@@ -25,6 +53,7 @@
 -- gpt help pls 
 -- finally gpt blow me and it works
 -- i forgot patchma needs optimize is iptimize kingggngn
+-- yayyyy worksss YIPPIEEE prob pushing tommorow when im no longer wake sleeping and debug it tommrow time is 23:33 now
 
 spawn(function()
 if getgenv().replicatesignal then
@@ -38,11 +67,7 @@ else
 end
 end)
 
--- lobotomized optimized meow datttttsss a patchma
-spawn(function()
-print("Support:", support)
-print("Permadeath:", permadeath)
-end)
+
 
 local USE_METAMETHOD_OPTIMIZATIONS = true
 --[[^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -219,7 +244,7 @@ local Inverse=cfGet(cf_0,"Inverse")
 local Lerp=cfGet(cf_0,"Lerp")
 
 local guiTheme={
-	guiTitle="Patchma Hub - Permadeath Edition",
+	guiTitle="Patchma Hub - Permadeath",
 	windowTitleColor=c3(0,0,1),
 	windowTopColor=c3(0,0,0),
 	windowBottomColor=c3(0,0,0.584314),
@@ -603,6 +628,14 @@ lbl("Continued and owned by Emper")
 lbl("Permadeath discovered by Shownape")
 lbl("Permadeath edition by DoubleRainbowXT")
 lbl("discord.gg/QMy5f6DrbH")
+
+if permadeath == true then
+	-- Nothing at ducking all!
+else
+	lbl("")
+	lbl("Permadeath not supported!")
+	lbl("Enable it manually in settings!")
+end
 
 local allowshiftlock=nil
 local ctrltp=nil
