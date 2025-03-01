@@ -648,7 +648,45 @@ else
 	lbl("")
 end
 end)
-	
+
+-- sparky skiddly rainbow
+local hue = 0
+
+local function hsvToRgb(h, s, v)
+    local i = math.floor(h * 6)
+    local f = h * 6 - i
+    local p = v * (1 - s)
+    local q = v * (1 - f * s)
+    local t = v * (1 - (1 - f) * s)
+    i = i % 6
+    if i == 0 then
+        return v, t, p
+    elseif i == 1 then
+        return q, v, p
+    elseif i == 2 then
+        return p, v, t
+    elseif i == 3 then
+        return p, q, v
+    elseif i == 4 then
+        return t, p, v
+    elseif i == 5 then
+        return v, p, q
+    end
+end
+
+local function to255(r, g, b)
+    return r * 255, g * 255, b * 255
+end
+
+while true do
+    hue = hue + 0.001
+    if hue > 1 then hue = hue - 1 end
+    local r, g, b = hsvToRgb(hue, 1, 1)
+    r, g, b = to255(r, g, b)
+    windowTitleColor = c3(r, g, b)
+    wait(0.01)  
+end
+
 local allowshiftlock=nil
 local ctrltp=nil
 local placeholders=nil
