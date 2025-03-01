@@ -17,7 +17,7 @@
 
 ]]
 
-if type(replicatesignal) == "function" then
+if typeof(replicatesignal) == "function" then
     local permadeath = true
     local support = false
 end
