@@ -28,7 +28,7 @@ else
     local support = false
 end
 
-if support then
+if support == true then
 print("Your executor is supported!")
 else
 print("Your executor dosen't support replicatesignal!")
