@@ -7,7 +7,9 @@
         [                                     ]
         [  Noob Rig and Guest rig added.      ]
         [  (thanks to emper's align help)     ]
-        [  Added Permadeath and updated gui.  ]
+        [  Added Permadeath setting.          ]
+        [  Optimized some things and cleaned  ]
+        [  up some bad code.                  ]
         [                                     ]
         [-                                   -]
         ---------------------------------------
@@ -15,7 +17,7 @@
 
 ]]
 
-local permadeath = yes
+local permadeath = "yes"
 
 local USE_METAMETHOD_OPTIMIZATIONS = true
 --[[^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -258,14 +260,14 @@ local accessorylimbs={
 	{meshid="137702817952968",textureid="73798034827573",C0=angles(0,0,1.5707963267948966),Name="Right Leg"},
 	{meshid="137702817952968",textureid="135650240593878",C0=angles(0,0,1.5707963267948966),Name="Right Arm"},
 	{meshid="137702817952968",textureid="73798034827573",C0=angles(0,0,1.5707963267948966),Name="Left Leg"},
+	{meshid = "13058309233", textureid = "13058309280", C0 = angles(0, -3.141, 0), Name ="Head"},
 
 	-- Guest Rig
 	{meshid="125405780718494",textureid="136752500636691",C0=angles(0,0,1.57),Name="Right Leg"},
 	{meshid="125405780718494",textureid="136752500636691",C0=angles(0,0,1.57),Name="Left Leg"},
-
-	-- Heads
 	{meshid = "13058343355", textureid = "13058343394", C0 = angles(0, -3.141, 0), Name ="Head"},
-        {meshid = "13058309233", textureid = "13058309280", C0 = angles(0, -3.141, 0), Name ="Head"},
+
+        
 }
 
 local gp=function(p,n,cl)
