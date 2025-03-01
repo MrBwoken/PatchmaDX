@@ -17,8 +17,10 @@
 
 ]]
 
--- 23:06 no sleep coding adventures
-if replicatesignal then
+-- 23:08 no sleep coding adventures
+-- wdym i have replicatesignal fuck roblox!! grrhhgfj i just wanna sleep
+-- 32:19 asked gpt for help finally got it to work mghnm i knew it getgenv but forgot :c
+if getgenv().replicatesignal then
     local permadeath = true
     local support = true
 else
