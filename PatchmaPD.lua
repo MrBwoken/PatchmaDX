@@ -20,12 +20,15 @@
 -- 23:08 no sleep coding adventures
 -- wdym i have replicatesignal fuck roblox!! grrhhgfj i just wanna sleep
 -- 32:19 asked gpt for help finally got it to work mghnm i knew it getgenv but forgot :c
+-- nvm didn't fix it im so tired i need help
+-- i fucking hate local so it gets voided by an lc edit now
+
 if getgenv().replicatesignal then
-    local permadeath = true
-    local support = true
+    permadeath = true
+    support = true
 else
-    local permadeath = false
-    local support = false
+     permadeath = false
+     support = false
 end
 
 if support == true then
