@@ -208,10 +208,12 @@ local guiTheme={
 
 local permadeathlmao = function()
 	if permadeath == yes then
+	print("debug")
 	replicatesignal(game.Players.LocalPlayer.ConnectDiedSignalBackend)
         wait(game.Players.RespawnTime + .1)
 	else
 	-- Do nothing.
+        print("meow")
 	end
 end
 
@@ -2100,8 +2102,7 @@ local reanimate=function()
 end
 
 btn("creepy crawler",function()
-task.spawn(permadeathlmao)
-wait(game.Players.RespawnTime + .2)
+permadeathlmao()
 	local t=reanimate()
 	if type(t)~="table" then return end
 	local getJoint=t.getJoint
