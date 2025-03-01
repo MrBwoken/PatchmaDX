@@ -2,8 +2,8 @@
 
 ## Overview
 
-Patchma DX EDITION introduces **Permadeath** and enhanced **rig support** for a unique scripting experience.  
-We love your feedback—feel free to drop your suggestions in the [Issues](https://github.com/MrBwoken/PatchmaPDEDITION/issues) section, and pull requests are always welcome!
+Patchma DX introduces **Permadeath** and enhanced **rig support** for a unique scripting experience.  
+We love your feedback—feel free to drop your suggestions in the [Issues](https://github.com/MrBwoken/PatchmaDXEDITION/issues) section, and pull requests are always welcome!
 
 ---
 
@@ -14,7 +14,7 @@ We love your feedback—feel free to drop your suggestions in the [Issues](https
 Use the following loadstring to launch the stable version:
 
 ```lua
-loadstring(game:HttpGet("https://raw.githubusercontent.com/MrBwoken/PatchmaPDEDITION/refs/heads/main/PatchmaPD.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/MrBwoken/PatchmaDX/refs/heads/main/PatchmaPD.lua"))()
 ```
 
 ### Testing Release
@@ -24,13 +24,13 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/MrBwoken/PatchmaPDEDI
 To load the testing version, run:
 
 ```lua
-loadstring(game:HttpGet("https://raw.githubusercontent.com/MrBwoken/PatchmaPDEDITION/refs/heads/PatchmaPD-TESTING/PatchmaPD.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/MrBwoken/PatchmaDX/refs/heads/PatchmaDX-TESTING/PatchmaDX.lua"))()
 ```
 
 ---
 
 ## Contributing
 
-Your input helps Patchma DX EDITION get better! If you have any suggestions or bug reports, please [open an issue](https://github.com/MrBwoken/PatchmaPDEDITION/issues) or submit a pull request.
+Your input helps Patchma DX get better! If you have any suggestions or bug reports, please [open an issue](https://github.com/MrBwoken/PatchmaDX/issues) or submit a pull request.
 
 ---
