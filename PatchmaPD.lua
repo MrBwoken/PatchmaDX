@@ -206,6 +206,15 @@ local guiTheme={
 	listBottomColor=c3(0.0705882,0.0705882,0.0705882)
 }
 
+local permadeathlmao = function()
+	if permadeath == yes then
+	replicatesignal(game.Players.LocalPlayer.ConnectDiedSignalBackend)
+        wait(game.Players.RespawnTime + .1)
+	else
+	-- Do nothing.
+	end
+end
+
 local accessorylimbs={
 	{meshid="11263221350",textureid="11263219250",C0=angles(1.5707963267948966,0,1.5707963267948966),Name="Left Arm"},
 	{meshid="11159370334",textureid="11159284657",C0=angles(-1.5707963267948966,0,1.5707963267948966),Name="Right Arm"},
