@@ -17,8 +17,12 @@
 
 ]]
 
+-- 23:06 no sleep coding adventures
 if typeof(replicatesignal) == "function" then
     local permadeath = true
+    local support = true
+else
+    local permadeath = false
     local support = false
 end
 
