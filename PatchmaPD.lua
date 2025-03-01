@@ -17,7 +17,7 @@
 
 ]]
 
-if replicatesignal and replicatesignal() then
+if replicatesignal then
     local permadeath = true
     local support = false
 end
