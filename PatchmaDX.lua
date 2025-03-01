@@ -1,6 +1,6 @@
 --[[
-	Patchma hub made originally by MyWorld, updated and owned by Emper.
-        Patchma hub PERMADEATH EDITION by DoubleRainbowXT.
+	Patchma made originally by MyWorld, updated and owned by Emper.
+        Patchma DX by DoubleRainbowXT.
 
         _______________________________________
         [-             Updates               -]
@@ -19,7 +19,7 @@
        loadstring(gams:HttpGet("https://raw.githubusercontent.com/MrBwoken/PatchmaDX/refs/heads/main/PatchmaDX.lua"))()
 
        Testing Loadstring:
-       loadstring(game:HttpGet("https://raw.githubusercontent.com/MrBwoken/PatchmaPDEDITION/refs/heads/PatchmaDX-TESTING/PatchmaDX.lua"))()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/MrBwoken/PatchmaDX/refs/heads/PatchmaDX-TESTING/PatchmaDX.lua"))()
 
 ]]
 
@@ -250,8 +250,8 @@ local Inverse=cfGet(cf_0,"Inverse")
 local Lerp=cfGet(cf_0,"Lerp")
 
 local guiTheme={
-	guiTitle="Patchma Hub - Permadeath",
-	windowTitleColor=c3(0,0,1),
+	guiTitle="Patchma Hub - DX",
+	windowTitleColor = c3(255, 215, 0),
 	windowTopColor=c3(0,0,0),
 	windowBottomColor=c3(0,0,0.584314),
 	windowMinimizedSize={X=220,Y=22},
@@ -629,6 +629,7 @@ end
 
 Draggable(i1)
 
+
 lbl("Patchma by MyWorld")
 lbl("Continued and owned by Emper")
 lbl("Permadeath discovered by Shownape")
@@ -636,6 +637,8 @@ lbl("PatchmaPD by DoubleRainbowXT")
 lbl("discord.gg/QMy5f6DrbH")
 lbl("")
 
+spawn(function()
+task.wait(.1)		
 -- for the skids
 if support == true then
 	-- Nothing at ducking all!
@@ -644,7 +647,8 @@ else
 	lbl("Enable it manually in settings!")
 	lbl("")
 end
-
+end)
+	
 local allowshiftlock=nil
 local ctrltp=nil
 local placeholders=nil
