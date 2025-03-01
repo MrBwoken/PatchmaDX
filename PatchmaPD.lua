@@ -207,7 +207,7 @@ local guiTheme={
 }
 
 local permadeathlmao = function()
-	if permadeath == yes then
+	if permadeath == "yes" then
 	print("debug")
 	replicatesignal(game.Players.LocalPlayer.ConnectDiedSignalBackend)
         wait(game.Players.RespawnTime + .1)
