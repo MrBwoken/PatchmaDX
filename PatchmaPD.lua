@@ -22,20 +22,21 @@
 -- 32:19 asked gpt for help finally got it to work mghnm i knew it getgenv but forgot :c
 -- nvm didn't fix it im so tired i need help
 -- i fucking hate local so it gets voided by an lc edit now
+-- gpt help pls 
+-- finally gpt blow me and it works
 
 if getgenv().replicatesignal then
+    print("✅ Your executor supports `replicatesignal`!")
     permadeath = true
     support = true
 else
-     permadeath = false
-     support = false
-end
---gpt help pls 
-if getgenv().replicatesignal then
-    print("✅ Your executor supports `replicatesignal`!")
-else
     print("❌ Your executor doesn't support `replicatesignal`!")
+    permadeath = false
+    support = false
 end
+
+print("Support:", support)
+print("Permadeath:", permadeath)
 
 local USE_METAMETHOD_OPTIMIZATIONS = true
 --[[^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
