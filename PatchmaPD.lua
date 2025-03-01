@@ -2100,8 +2100,8 @@ local reanimate=function()
 end
 
 btn("creepy crawler",function()
-	permadeathlmao()
-        wait(game.Players.RespawnTime + .2)
+task.spawn(permadeathlmao)
+wait(game.Players.RespawnTime + .2)
 	local t=reanimate()
 	if type(t)~="table" then return end
 	local getJoint=t.getJoint
