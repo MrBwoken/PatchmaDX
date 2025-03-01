@@ -17,7 +17,7 @@
 
 ]]
 
-local permadeath = "yes"
+local permadeath = true
 
 local USE_METAMETHOD_OPTIMIZATIONS = true
 --[[^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -207,7 +207,7 @@ local guiTheme={
 }
 
 local permadeathlmao = function()
-	if permadeath == "yes" then
+	if permadeath == true then
 	print("debug")
 	replicatesignal(game.Players.LocalPlayer.ConnectDiedSignalBackend)
         wait(game.Players.RespawnTime + .1)
