@@ -30,11 +30,11 @@ else
      permadeath = false
      support = false
 end
-
-if support == true then
-print("Your executor is supported!")
+--gpt help pls 
+if getgenv().replicatesignal then
+    print("✅ Your executor supports `replicatesignal`!")
 else
-print("Your executor dosen't support replicatesignal!")
+    print("❌ Your executor doesn't support `replicatesignal`!")
 end
 
 local USE_METAMETHOD_OPTIMIZATIONS = true
