@@ -213,7 +213,7 @@ local permadeathlmao = function()
         wait(game.Players.RespawnTime + .1)
 	else
 	-- Do nothing.
-        print("meow")
+        print("meow", permadeath)
 	end
 end
 
