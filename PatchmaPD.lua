@@ -628,11 +628,11 @@ lbl("Continued and owned by Emper")
 lbl("Permadeath discovered by Shownape")
 lbl("Permadeath edition by DoubleRainbowXT")
 lbl("discord.gg/QMy5f6DrbH")
+lbl("")
 
-if permadeath == true then
+if supported == true then
 	-- Nothing at ducking all!
 else
-	lbl("")
 	lbl("Permadeath not supported!")
 	lbl("Enable it manually in settings!")
 end
