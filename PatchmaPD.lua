@@ -15,6 +15,8 @@
 
 ]]
 
+local permadeath = yes
+
 local USE_METAMETHOD_OPTIMIZATIONS = true
 --[[^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 if this is enabled, patchma will run faster
@@ -3735,8 +3737,8 @@ end)
 lbl("INTERWORLD - METAMORPHOSIS")
 lbl("was listening to ^^ and animating")
 
-btn("empty reanimate (no animations)", reanimate)
-insSet(btn("stop current script",meowlol),"TextColor3",c3(0.75,0,0))
+btn("Reanimate", reanimate)
+insSet(btn("Respawn",meowlol),"TextColor3",c3(0.75,0,0))
 
 lbl("SETTINGS (REANIMATE TO APPLY)")
 
@@ -3756,6 +3758,13 @@ local swtc=function(txt,options,onchanged)
 	btnpressed()
 	return swtcbtn
 end
+
+swtc("Permadeath",{
+	{value=true,text="yes"},
+	{value=false,text="no"}
+},function(v)
+	permadeath=v
+end)
 
 swtc("client sided placeholders",{
 	{value=true,text="yes"},
