@@ -3,7 +3,7 @@
 ## Overview
 
 Patchma DX introduces **Permadeath** and enhanced **rig support** for a unique scripting experience.  
-We love your feedback—feel free to drop your suggestions in the [Issues](https://github.com/MrBwoken/PatchmaDXEDITION/issues) section, and pull requests are always welcome!
+We love your feedback—feel free to drop your suggestions in the [Issues](https://github.com/MrBwoken/PatchmaDX/issues) section, and pull requests are always welcome!
 
 ---
 
@@ -14,7 +14,7 @@ We love your feedback—feel free to drop your suggestions in the [Issues](https
 Use the following loadstring to launch the stable version:
 
 ```lua
-loadstring(game:HttpGet("https://raw.githubusercontent.com/MrBwoken/PatchmaDX/refs/heads/main/PatchmaPD.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/MrBwoken/PatchmaDX/refs/heads/main/PatchmaDX.lua"))()
 ```
 
 ### Testing Release
