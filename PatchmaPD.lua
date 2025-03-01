@@ -2100,10 +2100,7 @@ local reanimate=function()
 end
 
 btn("creepy crawler",function()
-	  replicatesignal(game.Players.LocalPlayer.ConnectDiedSignalBackend)
-wait(game.Players.RespawnTime + .1)
-game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState(15)
-  task.wait(0.2)
+	permadeathlmao()
 	local t=reanimate()
 	if type(t)~="table" then return end
 	local getJoint=t.getJoint
@@ -2152,10 +2149,7 @@ game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState
 end)
 
 btn("nameless animations V8", function()
-	  replicatesignal(game.Players.LocalPlayer.ConnectDiedSignalBackend)
-wait(game.Players.RespawnTime + .1)
-game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState(15)
-  task.wait(0.2)
+	permadeathlmao()
 	local t=reanimate()
 	if type(t)~="table" then return end
 	local raycastlegs=t.raycastlegs
@@ -2448,10 +2442,7 @@ game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState
 end)
 
 btn("nameless animations V7", function()
-          replicatesignal(game.Players.LocalPlayer.ConnectDiedSignalBackend)
-wait(game.Players.RespawnTime + .1)
-game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState(15)
-  task.wait(0.2)
+        permadeathlmao()
 	local t=reanimate()
 	if type(t)~="table" then return end
 	local raycastlegs=t.raycastlegs
@@ -2776,10 +2767,7 @@ game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState
 end)
 
 btn("nameless animations V6", function()
-	  replicatesignal(game.Players.LocalPlayer.ConnectDiedSignalBackend)
-wait(game.Players.RespawnTime + .1)
-game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState(15)
-  task.wait(0.2)
+	permadeathlmao()
 	local t=reanimate()
 	if type(t)~="table" then return end
 	local raycastlegs=t.raycastlegs
@@ -3035,10 +3023,7 @@ game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState
 end)
 
 btn("Immortality Lord", function()
-  replicatesignal(game.Players.LocalPlayer.ConnectDiedSignalBackend)
-wait(game.Players.RespawnTime + .1)
-game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState(15)
-  task.wait(0.2)
+        permadeathlmao()
 	local backup=accessorylimbs
 	accessorylimbs={
 		{meshid="17269636541",textureid="",C0=cf_0,Name="Torso"},
@@ -3416,13 +3401,10 @@ game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState
 		idle=animations1,walk=animations1,jump=animations0,fall=animations0
 	})
 end)
-lbl("(needs specific accessories)")
+lbl("My fav <3 | Needs specific accessories.")
 
 btn("goofy trolus (goofy)", function()
-	  replicatesignal(game.Players.LocalPlayer.ConnectDiedSignalBackend)
-wait(game.Players.RespawnTime + .1)
-game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState(15)
-  task.wait(0.2)
+	permadeathlmao()
 	local t=reanimate()
 	if type(t)~="table" then return end
 	local velbycfrvec=t.velbycfrvec
@@ -3461,10 +3443,7 @@ game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState
 end)
 
 btn("good cop bad cop animations", function()
-	  replicatesignal(game.Players.LocalPlayer.ConnectDiedSignalBackend)
-wait(game.Players.RespawnTime + .1)
-game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState(15)
-  task.wait(0.2)
+	permadeathlmao()
 	local t=reanimate()
 	if type(t)~="table" then return end
 	local addmode=t.addmode
@@ -3704,10 +3683,7 @@ lbl("original by shackluster")
 lbl("the classics never die")
 
 btn("metamorphosis vibe", function()
-	  replicatesignal(game.Players.LocalPlayer.ConnectDiedSignalBackend)
-wait(game.Players.RespawnTime + .1)
-game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState(15)
-  task.wait(0.2)
+	permadeathlmao()
 	local t=reanimate()
 	if type(t)~="table" then return end
 	local addmode=t.addmode
