@@ -626,15 +626,17 @@ Draggable(i1)
 lbl("Patchma by MyWorld")
 lbl("Continued and owned by Emper")
 lbl("Permadeath discovered by Shownape")
-lbl("Permadeath edition by DoubleRainbowXT")
+lbl("PatchmaPD by DoubleRainbowXT")
 lbl("discord.gg/QMy5f6DrbH")
 lbl("")
 
-if supported == true then
+-- for the skids
+if support == true then
 	-- Nothing at ducking all!
 else
 	lbl("Permadeath not supported!")
 	lbl("Enable it manually in settings!")
+	lbl("")
 end
 
 local allowshiftlock=nil
