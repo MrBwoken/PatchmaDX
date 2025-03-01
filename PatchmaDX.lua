@@ -16,9 +16,10 @@
 
 
        Normal Loadstring:
-       loadstring(gams:HttpGet("https://raw.githubusercontent.com/MrBwoken/PatchmaPDEDITION/refs/heads/main/PatchmaPD.lua"))()
+       loadstring(gams:HttpGet("https://raw.githubusercontent.com/MrBwoken/PatchmaDX/refs/heads/main/PatchmaDX.lua"))()
+
        Testing Loadstring:
-       loadstring(game:HttpGet("https://raw.githubusercontent.com/MrBwoken/PatchmaPDEDITION/refs/heads/PatchmaPD-TESTING/PatchmaPD.lua"))()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/MrBwoken/PatchmaPDEDITION/refs/heads/PatchmaDX-TESTING/PatchmaDX.lua"))()
 
 ]]
 
