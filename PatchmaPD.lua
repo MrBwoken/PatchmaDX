@@ -17,7 +17,16 @@
 
 ]]
 
-local permadeath = true
+if replicatesignal and replicatesignal() then
+    local permadeath = true
+    local support = false
+end
+
+if support then
+print("Your executor is supported!")
+else
+print("Your executor dosen't support replicatesignal!")
+end
 
 local USE_METAMETHOD_OPTIMIZATIONS = true
 --[[^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -208,12 +217,10 @@ local guiTheme={
 
 local permadeathlmao = function()
 	if permadeath == true then
-	print("debug")
 	replicatesignal(game.Players.LocalPlayer.ConnectDiedSignalBackend)
         wait(game.Players.RespawnTime + .1)
 	else
 	-- Do nothing.
-        print("meow", permadeath)
 	end
 end
 
