@@ -24,7 +24,9 @@
 -- i fucking hate local so it gets voided by an lc edit now
 -- gpt help pls 
 -- finally gpt blow me and it works
+-- i forgot patchma needs optimize is iptimize kingggngn
 
+spawn(function()
 if getgenv().replicatesignal then
     print("✅ Your executor supports `replicatesignal`!")
     permadeath = true
@@ -34,9 +36,13 @@ else
     permadeath = false
     support = false
 end
+end)
 
+-- lobotomized optimized meow datttttsss a patchma
+spawn(function()
 print("Support:", support)
 print("Permadeath:", permadeath)
+end)
 
 local USE_METAMETHOD_OPTIMIZATIONS = true
 --[[^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
