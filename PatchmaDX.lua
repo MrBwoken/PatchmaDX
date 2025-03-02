@@ -22,6 +22,14 @@
        Testing Loadstring:
        loadstring(game:HttpGet("https://raw.githubusercontent.com/MrBwoken/PatchmaDX/refs/heads/PatchmaDX-TESTING/PatchmaDX.lua"))()
 
+       For forks or pulls:
+       permadeathlmao() - Executes permadeath if permadeath is true.
+       meowlol() - Stops reanimate.
+
+       !!! If you insert any Patchma script you made here, put permadeathlmao() before local t=reanimate().
+       !!! Like this:
+       !!! permadeathlmao()
+       !!! local t=reanimate()
 ]]
 
 
