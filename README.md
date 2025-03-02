@@ -31,6 +31,8 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/MrBwoken/PatchmaDX/re
 
 ## Contributing
 
-Your input helps Patchma DX get better! If you have any suggestions or bug reports, please [open an issue](https://github.com/MrBwoken/PatchmaDX/issues) or submit a pull request.
+Your feedback makes Patchma DX even better! 🚀 If you have suggestions or bug reports, feel free to [open an issue](https://github.com/MrBwoken/PatchmaDX/issues) or submit a pull request. You can even add your own animations—just submit a pull request, and I'll merge it in!
 
+---
+![PATCHMADX](https://github.com/user-attachments/assets/42e11dd6-8e37-4503-bcbd-e41401fd49a2)
 ---
