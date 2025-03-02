@@ -3465,7 +3465,8 @@ btn("Immortality Lord", function()
 		idle=animations1,walk=animations1,jump=animations0,fall=animations0
 	})
 end)
-lbl("My fav <3 | Needs specific accessories.")
+lbl("My fav <3 | Needs specified accessories. (offsale)")
+lbl("")
 
 btn("goofy trolus (goofy)", function()
 	permadeathlmao()
@@ -3745,6 +3746,7 @@ btn("good cop bad cop animations", function()
 end)
 lbl("original by shackluster")
 lbl("the classics never die")
+lbl("")
 
 btn("metamorphosis vibe", function()
 	permadeathlmao()
@@ -3787,12 +3789,13 @@ end)
 
 lbl("INTERWORLD - METAMORPHOSIS")
 lbl("was listening to ^^ and animating")
+lbl("")
 
 btn("Reanimate", reanimate)
 insSet(btn("Respawn",meowlol),"TextColor3",c3(0.75,0,0))
-
+lbl("")
 lbl("SETTINGS (REANIMATE TO APPLY)")
-
+lbl("")
 local swtc=function(txt,options,onchanged)
 	local current=0
 	local swtcbtn=nil
