@@ -1,19 +1,75 @@
 --[[
-	Patchma hub made originally by MyWorld, updated and owned by Emper.
-        Patchma hub PERMADEATH EDITION by DoubleRainbowXT.
+	Patchma made originally by MyWorld, updated and owned by Emper.
+        Patchma DX by DoubleRainbowXT.
 
         _______________________________________
         [-             Updates               -]
         [                                     ]
         [  Noob Rig and Guest rig added.      ]
         [  (thanks to emper's align help)     ]
-        [  Added Permadeath and updated gui.  ]
+        [  Added Permadeath setting.          ]
+        [  Optimized some things and cleaned  ]
+        [  up some bad code.                  ]
+        [  Recolored gui.                     ]
         [                                     ]
         [-                                   -]
         ---------------------------------------
-   	
+
+
+       Normal Loadstring:
+       loadstring(gams:HttpGet("https://raw.githubusercontent.com/MrBwoken/PatchmaDX/refs/heads/main/PatchmaDX.lua"))()
+
+       Testing Loadstring:
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/MrBwoken/PatchmaDX/refs/heads/PatchmaDX-TESTING/PatchmaDX.lua"))()
+
+       For forks or pulls:
+       permadeathlmao() - Executes permadeath if permadeath is true.
+       meowlol() - Stops reanimate.
 
 ]]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- just woke up, wtf are these retarded comments
+spawn(function()
+if getgenv().replicatesignal then
+    print("✅ Your executor supports `replicatesignal`!")
+    permadeath = true
+    support = true
+else
+    print("❌ Your executor doesn't support `replicatesignal`!")
+    permadeath = false
+    support = false
+end
+end)
+
+
 
 local USE_METAMETHOD_OPTIMIZATIONS = true
 --[[^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -190,8 +246,8 @@ local Inverse=cfGet(cf_0,"Inverse")
 local Lerp=cfGet(cf_0,"Lerp")
 
 local guiTheme={
-	guiTitle="Patchma Hub - Permadeath Edition",
-	windowTitleColor=c3(0,0,1),
+	guiTitle="[----D----] | Patchma | [----X----]",
+	windowTitleColor = c3(255, 215, 0),
 	windowTopColor=c3(0,0,0),
 	windowBottomColor=c3(0,0,0.584314),
 	windowMinimizedSize={X=220,Y=22},
@@ -199,8 +255,18 @@ local guiTheme={
 	buttonsTextColor=c3(0.0941177,0.317647,0.878431),
 	labelsTextColor=c3(0.560784,0.560784,0.560784),
 	listTopColor=c3(0,0,0),
-	listBottomColor=c3(0.0705882,0.0705882,0.0705882)
+	listBottomColor=c3(0.0, 0.0, 0.5)
 }
+
+
+local permadeathlmao = function()
+	if permadeath == true then
+	replicatesignal(game.Players.LocalPlayer.ConnectDiedSignalBackend)
+        wait(game.Players.RespawnTime + .1)
+	else
+	-- Do nothing.
+	end
+end
 
 local accessorylimbs={
 	{meshid="11263221350",textureid="11263219250",C0=angles(1.5707963267948966,0,1.5707963267948966),Name="Left Arm"},
@@ -256,14 +322,14 @@ local accessorylimbs={
 	{meshid="137702817952968",textureid="73798034827573",C0=angles(0,0,1.5707963267948966),Name="Right Leg"},
 	{meshid="137702817952968",textureid="135650240593878",C0=angles(0,0,1.5707963267948966),Name="Right Arm"},
 	{meshid="137702817952968",textureid="73798034827573",C0=angles(0,0,1.5707963267948966),Name="Left Leg"},
+	{meshid = "13058309233", textureid = "13058309280", C0 = angles(0, -3.141, 0), Name ="Head"},
 
 	-- Guest Rig
 	{meshid="125405780718494",textureid="136752500636691",C0=angles(0,0,1.57),Name="Right Leg"},
 	{meshid="125405780718494",textureid="136752500636691",C0=angles(0,0,1.57),Name="Left Leg"},
-
-	-- Heads
 	{meshid = "13058343355", textureid = "13058343394", C0 = angles(0, -3.141, 0), Name ="Head"},
-        {meshid = "13058309233", textureid = "13058309280", C0 = angles(0, -3.141, 0), Name ="Head"},
+
+        
 }
 
 local gp=function(p,n,cl)
@@ -560,11 +626,26 @@ end
 
 Draggable(i1)
 
+
 lbl("Patchma by MyWorld")
 lbl("Continued and owned by Emper")
 lbl("Permadeath discovered by Shownape")
-lbl("Permadeath edition by DoubleRainbowXT")
+lbl("Patchma DX by DoubleRainbowXT")
 lbl("discord.gg/QMy5f6DrbH")
+lbl("")
+
+spawn(function()
+task.wait(.1)		
+-- for the skids
+if support == true then
+	-- Nothing at ducking all!
+else
+	lbl("Permadeath not supported!")
+	lbl("Enable it manually in settings!")
+	lbl("")
+end
+end)
+
 
 local allowshiftlock=nil
 local ctrltp=nil
@@ -602,7 +683,8 @@ local reanimate=function()
 		aka no client sided instances
 		"what else do i optimize here"
 	]]
-
+	
+        permadeathlmao()
 	local novoid = true --prevents parts from going under workspace.FallenPartsDestroyHeight if you control them
 	local speedlimit = 3000 --makes your parts move slower if the magnitude of their velocity is higher than this
 	local retVelTime = 0.51 --time that claimed parts have velocity to reclaim in case u lose them
@@ -2087,10 +2169,6 @@ local reanimate=function()
 end
 
 btn("creepy crawler",function()
-	  replicatesignal(game.Players.LocalPlayer.ConnectDiedSignalBackend)
-wait(game.Players.RespawnTime + .1)
-game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState(15)
-  task.wait(0.2)
 	local t=reanimate()
 	if type(t)~="table" then return end
 	local getJoint=t.getJoint
@@ -2139,10 +2217,6 @@ game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState
 end)
 
 btn("nameless animations V8", function()
-	  replicatesignal(game.Players.LocalPlayer.ConnectDiedSignalBackend)
-wait(game.Players.RespawnTime + .1)
-game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState(15)
-  task.wait(0.2)
 	local t=reanimate()
 	if type(t)~="table" then return end
 	local raycastlegs=t.raycastlegs
@@ -2435,10 +2509,6 @@ game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState
 end)
 
 btn("nameless animations V7", function()
-          replicatesignal(game.Players.LocalPlayer.ConnectDiedSignalBackend)
-wait(game.Players.RespawnTime + .1)
-game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState(15)
-  task.wait(0.2)
 	local t=reanimate()
 	if type(t)~="table" then return end
 	local raycastlegs=t.raycastlegs
@@ -2763,10 +2833,6 @@ game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState
 end)
 
 btn("nameless animations V6", function()
-	  replicatesignal(game.Players.LocalPlayer.ConnectDiedSignalBackend)
-wait(game.Players.RespawnTime + .1)
-game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState(15)
-  task.wait(0.2)
 	local t=reanimate()
 	if type(t)~="table" then return end
 	local raycastlegs=t.raycastlegs
@@ -3022,10 +3088,6 @@ game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState
 end)
 
 btn("Immortality Lord", function()
-  replicatesignal(game.Players.LocalPlayer.ConnectDiedSignalBackend)
-wait(game.Players.RespawnTime + .1)
-game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState(15)
-  task.wait(0.2)
 	local backup=accessorylimbs
 	accessorylimbs={
 		{meshid="17269636541",textureid="",C0=cf_0,Name="Torso"},
@@ -3403,13 +3465,10 @@ game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState
 		idle=animations1,walk=animations1,jump=animations0,fall=animations0
 	})
 end)
-lbl("(needs specific accessories)")
+lbl("My fav <3 | (offsale)")
+lbl("")
 
 btn("goofy trolus (goofy)", function()
-	  replicatesignal(game.Players.LocalPlayer.ConnectDiedSignalBackend)
-wait(game.Players.RespawnTime + .1)
-game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState(15)
-  task.wait(0.2)
 	local t=reanimate()
 	if type(t)~="table" then return end
 	local velbycfrvec=t.velbycfrvec
@@ -3448,10 +3507,6 @@ game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState
 end)
 
 btn("good cop bad cop animations", function()
-	  replicatesignal(game.Players.LocalPlayer.ConnectDiedSignalBackend)
-wait(game.Players.RespawnTime + .1)
-game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState(15)
-  task.wait(0.2)
 	local t=reanimate()
 	if type(t)~="table" then return end
 	local addmode=t.addmode
@@ -3689,12 +3744,9 @@ game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState
 end)
 lbl("original by shackluster")
 lbl("the classics never die")
+lbl("")
 
 btn("metamorphosis vibe", function()
-	  replicatesignal(game.Players.LocalPlayer.ConnectDiedSignalBackend)
-wait(game.Players.RespawnTime + .1)
-game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState(15)
-  task.wait(0.2)
 	local t=reanimate()
 	if type(t)~="table" then return end
 	local addmode=t.addmode
@@ -3734,12 +3786,13 @@ end)
 
 lbl("INTERWORLD - METAMORPHOSIS")
 lbl("was listening to ^^ and animating")
+lbl("")
 
-btn("empty reanimate (no animations)", reanimate)
-insSet(btn("stop current script",meowlol),"TextColor3",c3(0.75,0,0))
-
+btn("Reanimate", reanimate)
+insSet(btn("Respawn",meowlol),"TextColor3",c3(0.75,0,0))
+lbl("")
 lbl("SETTINGS (REANIMATE TO APPLY)")
-
+lbl("")
 local swtc=function(txt,options,onchanged)
 	local current=0
 	local swtcbtn=nil
@@ -3756,6 +3809,13 @@ local swtc=function(txt,options,onchanged)
 	btnpressed()
 	return swtcbtn
 end
+
+swtc("Permadeath",{
+	{value=true,text="yes"},
+	{value=false,text="no"}
+},function(v)
+	permadeath=v
+end)
 
 swtc("client sided placeholders",{
 	{value=true,text="yes"},
