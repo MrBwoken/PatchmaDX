@@ -250,7 +250,7 @@ local guiTheme = {
     buttonsTextColor = c3(0.0941177, 0.317647, 0.878431),
     labelsTextColor = c3(0.560784, 0.560784, 0.560784),
     listTopColor = c3(0, 0, 0),
-    listBottomColor = c3(0.328, 0.62, 0.77)
+    listBottomColor = c3(197, 75, 140)
 }
 
 
