@@ -687,7 +687,8 @@ local reanimate=function()
 		aka no client sided instances
 		"what else do i optimize here"
 	]]
-
+	
+        permadeathlmao()
 	local novoid = true --prevents parts from going under workspace.FallenPartsDestroyHeight if you control them
 	local speedlimit = 3000 --makes your parts move slower if the magnitude of their velocity is higher than this
 	local retVelTime = 0.51 --time that claimed parts have velocity to reclaim in case u lose them
@@ -2172,7 +2173,6 @@ local reanimate=function()
 end
 
 btn("creepy crawler",function()
-permadeathlmao()
 	local t=reanimate()
 	if type(t)~="table" then return end
 	local getJoint=t.getJoint
@@ -3473,7 +3473,7 @@ btn("Immortality Lord", function()
 		idle=animations1,walk=animations1,jump=animations0,fall=animations0
 	})
 end)
-lbl("My fav <3 | Needs specified accessories. (offsale)")
+lbl("My fav <3 | (offsale)")
 lbl("")
 
 btn("goofy trolus (goofy)", function()
