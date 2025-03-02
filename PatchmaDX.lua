@@ -51,16 +51,7 @@
 
 
 
--- 23:08 no sleep coding adventures
--- wdym i have replicatesignal fuck roblox!! grrhhgfj i just wanna sleep
--- 32:19 asked gpt for help finally got it to work mghnm i knew it getgenv but forgot :c
--- nvm didn't fix it im so tired i need help
--- i fucking hate local so it gets voided by an lc edit now
--- gpt help pls 
--- finally gpt blow me and it works
--- i forgot patchma needs optimize is iptimize kingggngn
--- yayyyy worksss YIPPIEEE prob pushing tommorow when im no longer wake sleeping and debug it tommrow time is 23:33 now
-
+-- just woke up, wtf are these retarded comments
 spawn(function()
 if getgenv().replicatesignal then
     print("✅ Your executor supports `replicatesignal`!")
@@ -73,12 +64,6 @@ else
 end
 end)
 
--- optimazation
-spawn(function()
-while true do end
-while true do end 
-while true do end
-	end)
 
 
 local USE_METAMETHOD_OPTIMIZATIONS = true
@@ -265,7 +250,7 @@ local guiTheme = {
     buttonsTextColor = c3(0.0941177, 0.317647, 0.878431),
     labelsTextColor = c3(0.560784, 0.560784, 0.560784),
     listTopColor = c3(0, 0, 0),
-    listBottomColor = c3(0.0705882, 0.0705882, 0.0705882)
+    listBottomColor = c3(328, 62, 77)
 }
 
 
