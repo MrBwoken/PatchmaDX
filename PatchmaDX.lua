@@ -26,10 +26,6 @@
        permadeathlmao() - Executes permadeath if permadeath is true.
        meowlol() - Stops reanimate.
 
-       !!! If you insert any Patchma script you made here, put permadeathlmao() before local t=reanimate().
-       !!! Like this:
-       !!! permadeathlmao()
-       !!! local t=reanimate()
 ]]
 
 
@@ -2221,7 +2217,6 @@ btn("creepy crawler",function()
 end)
 
 btn("nameless animations V8", function()
-	permadeathlmao()
 	local t=reanimate()
 	if type(t)~="table" then return end
 	local raycastlegs=t.raycastlegs
@@ -2514,7 +2509,6 @@ btn("nameless animations V8", function()
 end)
 
 btn("nameless animations V7", function()
-        permadeathlmao()
 	local t=reanimate()
 	if type(t)~="table" then return end
 	local raycastlegs=t.raycastlegs
@@ -2839,7 +2833,6 @@ btn("nameless animations V7", function()
 end)
 
 btn("nameless animations V6", function()
-	permadeathlmao()
 	local t=reanimate()
 	if type(t)~="table" then return end
 	local raycastlegs=t.raycastlegs
@@ -3095,7 +3088,6 @@ btn("nameless animations V6", function()
 end)
 
 btn("Immortality Lord", function()
-        permadeathlmao()
 	local backup=accessorylimbs
 	accessorylimbs={
 		{meshid="17269636541",textureid="",C0=cf_0,Name="Torso"},
@@ -3477,7 +3469,6 @@ lbl("My fav <3 | (offsale)")
 lbl("")
 
 btn("goofy trolus (goofy)", function()
-	permadeathlmao()
 	local t=reanimate()
 	if type(t)~="table" then return end
 	local velbycfrvec=t.velbycfrvec
@@ -3516,7 +3507,6 @@ btn("goofy trolus (goofy)", function()
 end)
 
 btn("good cop bad cop animations", function()
-	permadeathlmao()
 	local t=reanimate()
 	if type(t)~="table" then return end
 	local addmode=t.addmode
@@ -3757,7 +3747,6 @@ lbl("the classics never die")
 lbl("")
 
 btn("metamorphosis vibe", function()
-	permadeathlmao()
 	local t=reanimate()
 	if type(t)~="table" then return end
 	local addmode=t.addmode
