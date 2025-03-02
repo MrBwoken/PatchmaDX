@@ -243,9 +243,9 @@ local Lerp=cfGet(cf_0,"Lerp")
 
 local guiTheme={
 	guiTitle="Patchma Hub - D X",
-	windowTitleColor=Color3.fromRGB(100,38,70),
+	windowTitleColor=c3(0,0,1),
 	windowTopColor=c3(0,0,0),
-	windowBottomColor=Color3.fromRGB(100,38,70)
+	windowTitleColor=c3(0,0,1),
 	windowMinimizedSize={X=220,Y=22},
 	windowRegularSize={X=220,Y=290},
 	buttonsTextColor=c3(0.0941177,0.317647,0.878431),
