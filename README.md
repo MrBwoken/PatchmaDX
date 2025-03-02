@@ -2,10 +2,10 @@
 <h1 align="center">[----D----] PATCHMA [----X----]</h2>
 <p align="center">• The Patchma edit that adds more features •</p>
 <p align="center">
-	<a href="https://github.com/Toon-arch/bat2exe/issues">
+	<a href="https://github.com/MrBwoken/PatchmaDX/issues">
 		<img alt="Issues" src="https://img.shields.io/github/issues/MrBwoken/PatchmaDX?color=0088ff"/>
 	</a>
-	<a href="https://github.com/Toon-arch/bat2exe/pulls">
+	<a href="https://github.com/MrBwoken/PatchmaDX/pulls">
 		<img alt="GitHub Pulls" src="https://img.shields.io/github/issues-pr/MrBwoken/PatchmaDX?color=0088ff"/>
 	</a>
 </p>
