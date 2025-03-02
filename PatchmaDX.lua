@@ -10,6 +10,7 @@
         [  Added Permadeath setting.          ]
         [  Optimized some things and cleaned  ]
         [  up some bad code.                  ]
+        [  Remade gui.                        ]
         [                                     ]
         [-                                   -]
         ---------------------------------------
@@ -242,7 +243,7 @@ local Lerp=cfGet(cf_0,"Lerp")
 
 local guiTheme = {
     guiTitle = "Patchma Hub - DX",
-    windowTitleColor = c3(197, 75, 140),
+    windowTitleColor = Color3.fromRGB(197, 75, 140),
     windowTopColor = c3(0, 0, 0),
     windowBottomColor = c3(0, 0, 0.584314),
     windowMinimizedSize = { X = 220, Y = 22 },
