@@ -626,7 +626,7 @@ Draggable(i1)
 lbl("Patchma by MyWorld")
 lbl("Continued and owned by Emper")
 lbl("Permadeath discovered by Shownape")
-lbl("PatchmaPD by DoubleRainbowXT")
+lbl("Patchma DX by DoubleRainbowXT")
 lbl("discord.gg/QMy5f6DrbH")
 lbl("")
 
