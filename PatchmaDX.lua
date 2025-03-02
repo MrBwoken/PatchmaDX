@@ -242,8 +242,8 @@ local Inverse=cfGet(cf_0,"Inverse")
 local Lerp=cfGet(cf_0,"Lerp")
 
 local guiTheme={
-	guiTitle="Patchma DX",
-	windowTitleColor=c3(0,0,1),
+	guiTitle="-D | Patchma | X-',
+	windowTitleColor = c3(255, 215, 0),
 	windowTopColor=c3(0,0,0),
 	windowBottomColor=c3(0,0,0.584314),
 	windowMinimizedSize={X=220,Y=22},
