@@ -241,18 +241,19 @@ local IsKeyDown=insGet(uis,"IsKeyDown")
 local Inverse=cfGet(cf_0,"Inverse")
 local Lerp=cfGet(cf_0,"Lerp")
 
-local guiTheme = {
-    guiTitle = "Patchma Hub - DX",
-    windowTitleColor = c3(197, 75, 140),
-    windowTopColor = c3(0, 0, 0),
-    windowBottomColor = c3(0, 0, 0.584314),
-    windowMinimizedSize = { X = 220, Y = 22 },
-    windowRegularSize = { X = 220, Y = 290 },
-    buttonsTextColor = c3(0.0941177, 0.317647, 0.878431),
-    labelsTextColor = c3(0.560784, 0.560784, 0.560784),
-    listTopColor = c3(0, 0, 0),
-    listBottomColor = Color3.fromRGB(100, 38, 70)
+local guiTheme={
+	guiTitle="Patchma Hub - D X",
+	windowTitleColor=c3(197,75,140),
+	windowTopColor=c3(0,0,0),
+	windowBottomColor=c3(0,0,0.584314),
+	windowMinimizedSize={X=220,Y=22},
+	windowRegularSize={X=220,Y=290},
+	buttonsTextColor=c3(0.0941177,0.317647,0.878431),
+	labelsTextColor=c3(0.560784,0.560784,0.560784),
+	listTopColor=c3(0,0,0),
+	listBottomColor=Color3.fromRGB(100,38,70)
 }
+
 
 
 local permadeathlmao = function()
