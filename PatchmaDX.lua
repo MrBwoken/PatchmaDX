@@ -26,14 +26,16 @@
        permadeathlmao() - Executes permadeath if permadeath is true.
        meowlol() - Stops reanimate.
 
-       If you wanna add music:
--- mdownload(url, name) for download
--- mget(file) for getcustomasset()
--- mplay(file) for playing that file using getcustomasset()
--- mloopplay(file) for loop playing that file using getcustomasset()
--- mstop() for stop playing
--- mplaylist(song, song2, song3...) for a playlist
--- mlooplaylist(song, song2, song3...) for loop playing a playlist
+|      If you wanna add music:                                         |
+________________________________________________________________________
+       mdownload(url, name) for download
+       mget(file) for getcustomasset()
+       mplay(file) for playing that file using getcustomasset()
+       mloopplay(file) for loop playing that file using getcustomasset()
+       mstop() for stop playing
+       mplaylist(song, song2, song3...) for a playlist
+       mlooplaylist(song, song2, song3...) for loop playing a playlist
+-----------------------------------------------------------------------
        
 ]]
 
