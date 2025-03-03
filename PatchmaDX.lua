@@ -10,7 +10,7 @@
         [  Added Permadeath setting.          ]
         [  Optimized some things and cleaned  ]
         [  up some bad code.                  ]
-        [  Recolored gui.                     ]
+        [  Added Music Handler.               ]
         [                                     ]
         [-                                   -]
         ---------------------------------------
@@ -26,49 +26,79 @@
        permadeathlmao() - Executes permadeath if permadeath is true.
        meowlol() - Stops reanimate.
 
-       If you wanna add music:
+|      If you wanna add music:                                         |
+________________________________________________________________________
+-- Usage:
 -- mdownload(url, name) for download
 -- mget(file) for getcustomasset()
--- mplay(file) for playing that file using getcustomasset()
--- mloopplay(file) for loop playing that file using getcustomasset()
--- mstop() for stop playing
--- mplaylist(song, song2, song3...) for a playlist
--- mlooplaylist(song, song2, song3...) for loop playing a playlist
+-- mplay(file) for playing a file
+-- mloopplay(file) for loop playing a file
+-- mplaylist(song1, song2, song3, ...) for a playlist
+-- mloopplaylist(song1, song2, song3, ...) for looping a playlist
+-- mskip(number) to skip a specified number of songs
+-----------------------------------------------------------------------
        
 ]]
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 -- Music Handler
 spawn(function()
-loadstring(game:HttpGet("https://gist.githubusercontent.com/MrBwoken/ba180a21875c4e0d7a5ec9e002d7d425/raw/c35fd975cabe61338ab028b8861c49eb7e76b196/M-MUSIC-M"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/MrBwoken/Handlers/refs/heads/main/%3C%7CX%7C%3E%20M%20%3C%7CZ%7C%3E%20(music%20handler)"))()
 end)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 -- Music for scripts
 local music = true
+
+-- Download Immortality Lord Songs
+local downloadsongs = function()
+mdownload("https://github.com/MrBwoken/Music-/raw/refs/heads/main/Immortality%20Lord/ImmortalityLord.mp3", "IL.mp3")
+mdownload("https://github.com/MrBwoken/Music-/raw/refs/heads/main/Immortality%20Lord/ImmortalityLord2.mp3", "IL2.mp3")
+mdownload("https://github.com/MrBwoken/Music-/raw/refs/heads/main/Immortality%20Lord/ImmortalityLord3.mp3", "IL3.mp3")
+end
+
+-- Fire UP
+local fireup = function()
+downloadsongs()
+mloopplaylist("IL.mp3", "IL2.mp3", "IL3.mp3")
+end
 
 -- Support detector
 spawn(function()
@@ -679,6 +709,7 @@ local c=nil
 local stopreanimate=function() 
 	if c then
 		c=nil
+                mstop()
 		return true
 	end
 	return false
@@ -3142,7 +3173,11 @@ btn("Immortality Lord", function()
 	t.setJumpPower(0)
 	t.setHipHeight(7)
 	t.setGravity(math.huge)
-
+		
+        if music then
+        fireup()
+        end
+		
 	local Gun={C0=cf_0}
 	local Sword={C0=cf_0}
 
