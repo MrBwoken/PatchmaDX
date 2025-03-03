@@ -80,7 +80,7 @@ ________________________________________________________________________
 
 -- Music Handler
 spawn(function()
-loadstring(game:HttpGet("https://gist.githubusercontent.com/MrBwoken/ba180a21875c4e0d7a5ec9e002d7d425/raw/c35fd975cabe61338ab028b8861c49eb7e76b196/M-MUSIC-M"))()
+loadstring(game:HttpGet("https://gist.githubusercontent.com/MrBwoken/44181b7a54f149e3e272ebbff788fde9/raw/c05e213368814fdeebdc6128c3465f85fdfb9c3b/%253C%257CX%257C%253E%2520M%2520%253C%257CZ%257C%253E"))()
 end)
 
 -- Music for scripts
