@@ -92,13 +92,13 @@ local downloadsongs = function()
 mdownload("https://github.com/MrBwoken/Music-/raw/refs/heads/main/Immortality%20Lord/ImmortalityLord.mp3", "IL.mp3")
 mdownload("https://github.com/MrBwoken/Music-/raw/refs/heads/main/Immortality%20Lord/ImmortalityLord2.mp3", "IL2.mp3")
 mdownload("https://github.com/MrBwoken/Music-/raw/refs/heads/main/Immortality%20Lord/ImmortalityLord3.mp3", "IL3.mp3")
-end)
+end
 
 -- Fire UP
 local fireup = function()
 downloadsongs()
 mloopplaylist("IL.mp3", "IL2.mp3", "IL3.mp3")
-end)
+end
 
 -- Support detector
 spawn(function()
