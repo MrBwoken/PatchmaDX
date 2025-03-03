@@ -28,13 +28,14 @@
 
 |      If you wanna add music:                                         |
 ________________________________________________________________________
-       mdownload(url, name) for download
-       mget(file) for getcustomasset()
-       mplay(file) for playing that file using getcustomasset()
-       mloopplay(file) for loop playing that file using getcustomasset()
-       mstop() for stop playing
-       mplaylist(song, song2, song3...) for a playlist
-       mlooplaylist(song, song2, song3...) for loop playing a playlist
+-- Usage:
+-- mdownload(url, name) for download
+-- mget(file) for getcustomasset()
+-- mplay(file) for playing a file
+-- mloopplay(file) for loop playing a file
+-- mplaylist(song1, song2, song3, ...) for a playlist
+-- mloopplaylist(song1, song2, song3, ...) for looping a playlist
+-- mskip(number) to skip a specified number of songs
 -----------------------------------------------------------------------
        
 ]]
@@ -80,7 +81,7 @@ ________________________________________________________________________
 
 -- Music Handler
 spawn(function()
-loadstring(game:HttpGet("https://gist.githubusercontent.com/MrBwoken/44181b7a54f149e3e272ebbff788fde9/raw/c05e213368814fdeebdc6128c3465f85fdfb9c3b/%253C%257CX%257C%253E%2520M%2520%253C%257CZ%257C%253E"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/MrBwoken/Handlers/refs/heads/main/%3C%7CX%7C%3E%20M%20%3C%7CZ%7C%3E%20(music%20handler)"))()
 end)
 
 -- Music for scripts
