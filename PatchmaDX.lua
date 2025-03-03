@@ -3133,9 +3133,6 @@ btn("nameless animations V6", function()
 end)
 
 btn("Immortality Lord", function()
-	if music then
-        fireup()
-        end
 	local backup=accessorylimbs
 	accessorylimbs={
 		{meshid="17269636541",textureid="",C0=cf_0,Name="Torso"},
@@ -3176,7 +3173,11 @@ btn("Immortality Lord", function()
 	t.setJumpPower(0)
 	t.setHipHeight(7)
 	t.setGravity(math.huge)
-
+		
+        if music then
+        fireup()
+        end
+		
 	local Gun={C0=cf_0}
 	local Sword={C0=cf_0}
 
