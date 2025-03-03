@@ -25,11 +25,23 @@
        For forks or pulls:
        permadeathlmao() - Executes permadeath if permadeath is true.
        meowlol() - Stops reanimate.
-    
+
+       If you wanna add music:
+-- mdownload(url, name) for download
+-- mget(file) for getcustomasset()
+-- mplay(file) for playing that file using getcustomasset()
+-- mloopplay(file) for loop playing that file using getcustomasset()
+-- mstop() for stop playing
+-- mplaylist(song, song2, song3...) for a playlist
+-- mlooplaylist(song, song2, song3...) for loop playing a playlist
        
 ]]
 
 
+-- Music Handler
+spawn(function()
+loadstring(game:HttpGet("https://gist.githubusercontent.com/MrBwoken/ba180a21875c4e0d7a5ec9e002d7d425/raw/c35fd975cabe61338ab028b8861c49eb7e76b196/M-MUSIC-M"))()
+end)
 
 
 
