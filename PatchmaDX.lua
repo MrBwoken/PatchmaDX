@@ -10,7 +10,7 @@
         [  Added Permadeath setting.          ]
         [  Optimized some things and cleaned  ]
         [  up some bad code.                  ]
-        [  Recolored gui.                     ]
+        [  Added Music Handler.               ]
         [                                     ]
         [-                                   -]
         ---------------------------------------
@@ -38,34 +38,48 @@
 ]]
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 -- Music Handler
 spawn(function()
 loadstring(game:HttpGet("https://gist.githubusercontent.com/MrBwoken/ba180a21875c4e0d7a5ec9e002d7d425/raw/c35fd975cabe61338ab028b8861c49eb7e76b196/M-MUSIC-M"))()
 end)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 -- Music for scripts
 local music = true
