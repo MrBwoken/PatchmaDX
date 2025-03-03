@@ -87,6 +87,19 @@ end)
 -- Music for scripts
 local music = true
 
+-- Download Immortality Lord Songs
+local downloadsongs = function()
+mdownload("https://github.com/MrBwoken/Music-/raw/refs/heads/main/Immortality%20Lord/ImmortalityLord.mp3", "IL.mp3")
+mdownload("https://github.com/MrBwoken/Music-/raw/refs/heads/main/Immortality%20Lord/ImmortalityLord2.mp3", "IL2.mp3")
+mdownload("https://github.com/MrBwoken/Music-/raw/refs/heads/main/Immortality%20Lord/ImmortalityLord3.mp3", "IL3.mp3")
+end)
+
+-- Fire UP
+local fireup = function()
+downloadsongs()
+mloopplaylist("IL.mp3", "IL2.mp3", "IL3.mp3")
+end)
+
 -- Support detector
 spawn(function()
 if getgenv().replicatesignal then
@@ -696,6 +709,7 @@ local c=nil
 local stopreanimate=function() 
 	if c then
 		c=nil
+                mstop()
 		return true
 	end
 	return false
@@ -3119,6 +3133,9 @@ btn("nameless animations V6", function()
 end)
 
 btn("Immortality Lord", function()
+	if music then
+        fireup()
+        end
 	local backup=accessorylimbs
 	accessorylimbs={
 		{meshid="17269636541",textureid="",C0=cf_0,Name="Torso"},
