@@ -25,7 +25,8 @@
        For forks or pulls:
        permadeathlmao() - Executes permadeath if permadeath is true.
        meowlol() - Stops reanimate.
-
+    
+       
 ]]
 
 
@@ -54,9 +55,10 @@
 
 
 
+-- Music for scripts
+local music = true
 
-
--- just woke up, wtf are these retarded comments
+-- Support detector
 spawn(function()
 if getgenv().replicatesignal then
     print("✅ Your executor supports `replicatesignal`!")
@@ -3815,6 +3817,13 @@ swtc("Permadeath",{
 	{value=false,text="no"}
 },function(v)
 	permadeath=v
+end)
+
+swtc("Music",{
+	{value=true,text="yes"},
+	{value=false,text="no"}
+},function(v)
+	music=v
 end)
 
 swtc("client sided placeholders",{
