@@ -1608,6 +1608,7 @@ local reanimate=function()
 		if (not targetpart) or (flingtable[targetpart]~=nil) then
 			return false
 		end
+		firesignal()
 		if highlightflingtargets then
 			local h=i("Highlight")
 			insSet(h,"Name",rs())
