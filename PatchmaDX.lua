@@ -11,6 +11,7 @@
         [  Optimized some things and cleaned  ]
         [  up some bad code.                  ]
         [  Added Music Handler.               ]
+        [  Added music to Immortality Lord.   ] 
         [                                     ]
         [-                                   -]
         ---------------------------------------
