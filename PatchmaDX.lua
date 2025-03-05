@@ -5,13 +5,10 @@
         _______________________________________
         [-             Updates               -]
         [                                     ]
-        [  Noob Rig and Guest rig added.      ]
-        [  (thanks to emper's align help)     ]
-        [  Added Permadeath setting.          ]
-        [  Optimized some things and cleaned  ]
-        [  up some bad code.                  ]
-        [  Added Music Handler.               ]
-        [  Added Music to Immortality Lord.   ] 
+        [  One new RIG!                       ] 
+        [  Permadeath Fling Support!          ]
+        [  Permadeath Refit!(auto refit soon) ]
+        [  Permadeath Respawn Support!        ]
         [                                     ]
         [-                                   -]
         ---------------------------------------
@@ -3868,6 +3865,40 @@ insSet(btn("Refit",firesignal),"TextColor3",c3(0.75,0,0))
 lbl("")
 lbl("SETTINGS (REANIMATE TO APPLY)")
 lbl("")
+
+-- hope this ai shit works for once because im to lazy to so it manually 
+local Players = game:GetService("Players")
+local localPlayer = Players.LocalPlayer
+
+-- Function to set up monitoring for accessory removals on the character
+local function monitorCharacter(character)
+    -- Connect to the event that fires when a child is removed from the character
+    local connection
+    connection = character.ChildRemoved:Connect(function(child)
+        if child:IsA("Accessory") then
+            -- Call your firesignal() function when an accessory is removed
+            firesignal()
+            -- Disconnect to prevent multiple triggers on the same character
+            connection:Disconnect()
+            -- Wait for the character to respawn and then set up monitoring again
+            localPlayer.CharacterAdded:Wait()
+            wait(0.5)
+            monitorCharacter(localPlayer.Character)
+        end
+    end)
+end
+
+-- If the character already exists, start monitoring immediately
+if localPlayer.Character then
+    monitorCharacter(localPlayer.Character)
+end
+
+-- Ensure monitoring is set up whenever a new character spawns
+localPlayer.CharacterAdded:Connect(function(character)
+    wait(0.5)  -- small delay after respawn before monitoring starts
+    monitorCharacter(character)
+end)
+
 local swtc=function(txt,options,onchanged)
 	local current=0
 	local swtcbtn=nil
