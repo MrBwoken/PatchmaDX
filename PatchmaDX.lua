@@ -82,6 +82,9 @@ end)
 -- Music for scripts
 local music = true
 
+-- For Auto Refit
+local arefit = true
+
 -- Download Immortality Lord Songs
 local downloadsongs = function()
 mdownload("https://github.com/MrBwoken/Music-/raw/refs/heads/main/Immortality%20Lord/ImmortalityLord.mp3", "IL.mp3")
@@ -3866,36 +3869,45 @@ lbl("")
 lbl("SETTINGS (REANIMATE TO APPLY)")
 lbl("")
 
--- hope this ai shit works for once because im to lazy to so it manually 
+
+-- Set your conditions
+local permadeath = true
+local autorefit = true
+
+-- Check if "c" exists; replace the assignment with your actual condition/variable
+local c = true  -- For example purposes; set this to whatever condition you need
+
+-- Only execute the monitoring code if both conditions are met
+if not (permadeath and autorefit) then
+    return
+end
+
+-- Auto Refit
 local Players = game:GetService("Players")
 local localPlayer = Players.LocalPlayer
 
--- Function to set up monitoring for accessory removals on the character
+
 local function monitorCharacter(character)
-    -- Connect to the event that fires when a child is removed from the character
     local connection
     connection = character.ChildRemoved:Connect(function(child)
-        if child:IsA("Accessory") then
-            -- Call your firesignal() function when an accessory is removed
-            firesignal()
-            -- Disconnect to prevent multiple triggers on the same character
-            connection:Disconnect()
-            -- Wait for the character to respawn and then set up monitoring again
-            localPlayer.CharacterAdded:Wait()
+        if child:IsA("Accessory") and c then  -- c
+            firesignal()  
+            connection:Disconnect() 
+            localPlayer.CharacterAdded:Wait()  
             wait(0.5)
             monitorCharacter(localPlayer.Character)
         end
     end)
 end
 
--- If the character already exists, start monitoring immediately
+
 if localPlayer.Character then
     monitorCharacter(localPlayer.Character)
 end
 
--- Ensure monitoring is set up whenever a new character spawns
+
 localPlayer.CharacterAdded:Connect(function(character)
-    wait(0.5)  -- small delay after respawn before monitoring starts
+    wait(0.5) 
     monitorCharacter(character)
 end)
 
@@ -3928,6 +3940,13 @@ swtc("Music",{
 	{value=false,text="no"}
 },function(v)
 	music=v
+end)
+
+swtc("Auto Refit",{
+	{value=true,text="yes"},
+	{value=false,text="no"}
+},function(v)
+	arefit=v
 end)
 
 swtc("client sided placeholders",{
