@@ -3853,13 +3853,17 @@ btn("metamorphosis vibe", function()
 end)
 
 while true do
-    print("Fling Table Contents:")
-    for i, v in next, flingtable do
-        print(i, v) -- Print index and value
-    end
-    print("End of Table\n") -- Add spacing for readability
+    pcall(function()
+        print("Fling Table Contents:")
+        for i, v in next, flingtable do
+            print(i, v) -- Print index and value safely
+        end
+        print("End of Table\n")
+    end)
+    
     wait(3) -- Wait 3 seconds before printing again
 end
+
 
 lbl("INTERWORLD - METAMORPHOSIS")
 lbl("was listening to ^^ and animating")
