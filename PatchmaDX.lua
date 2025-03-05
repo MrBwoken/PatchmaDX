@@ -3852,13 +3852,18 @@ btn("metamorphosis vibe", function()
 	})
 end)
 
+
 while true do
     pcall(function()
-        print("Fling Table Contents:")
-        for i, v in next, flingtable do
-            print(i, v) -- Print index and value safely
+        if type(flingtable) == "table" then -- Ensure it's a table
+            print("Fling Table Contents:")
+            for i, v in next, flingtable do
+                print(i, v) -- Print index and value safely
+            end
+            print("End of Table\n")
+        else
+            print("flingtable is nil or not a table!")
         end
-        print("End of Table\n")
     end)
     
     wait(3) -- Wait 3 seconds before printing again
