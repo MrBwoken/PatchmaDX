@@ -174,12 +174,6 @@ local guiTheme={
 }
 
 local accessorylimbs={
-	{meshid="117287001096396",textureid="",C0=cf_0,Name="Left Arm"},
-	{meshid="117287001096396",textureid="",C0=cf_0,Name="Right Arm"},
-
-	{meshid="90736849096372",textureid="",C0=angles(0,0,1.5707963267948966),Name="Left Arm"},
-	{meshid="105141400603933",textureid="",C0=angles(0,0,1.5707963267948966),Name="Right Arm"},
-
 	{meshid="11263221350",textureid="11263219250",C0=angles(1.5707963267948966,0,1.5707963267948966),Name="Left Arm"},
 	{meshid="11159370334",textureid="11159284657",C0=angles(-1.5707963267948966,0,1.5707963267948966),Name="Right Arm"},
 
@@ -192,11 +186,8 @@ local accessorylimbs={
 	{meshid="12344207333",textureid="",C0=angles(2,0,0),Name="Left Arm"},
 	{meshid="12344206657",textureid="",C0=angles(2,0,0),Name="Right Arm"},
 
-	{meshid="13831073174",textureid="",C0=cf(0.017,0,-0.23)*angles(-1.4835298641951802,-0.15707963267948966,2.199114857512855),Name="Left Arm"},
-	{meshid="13839903766",textureid="",C0=cf(0,-0.62,-0.01)*angles(1.6580627893946132,0.15707963267948966,-2.199114857512855),Name="Right Arm"},
-
-	{meshid="121304376791439",textureid="",C0=cf_0,Name="Left Leg"},
-	{meshid="121304376791439",textureid="",C0=cf_0,Name="Right Leg"},
+	{meshid="13831073174",textureid="",C0=cfMul(cf(0.017,0,-0.23),angles(-1.4835298641951802,-0.15707963267948966,2.199114857512855)),Name="Left Arm"},
+	{meshid="13839903766",textureid="",C0=cfMul(cf(0,-0.62,-0.01),angles(1.6580627893946132,0.15707963267948966,-2.199114857512855)),Name="Right Arm"},
 
 	{meshid="11159370334",textureid="11159285454",C0=angles(1.5707963267948966,0,1.5707963267948966),Name="Left Leg"},
 	{meshid="12652772399",textureid="12652775021",C0=cf(0,-0.125,0),Name="Right Leg"},
@@ -210,18 +201,46 @@ local accessorylimbs={
 	{meshid="14768666349",textureid="",C0=cf_0,Name="Torso"},
 	{meshid="14241018198",textureid="",C0=cf_0,Name="Torso"},
 	{meshid="13421774668",textureid="",C0=cf_0,Name="Torso"},
-	{meshid="110684113028749",textureid="",C0=cf_0,Name="Torso"},
-	{meshid="127552124837034",textureid="",C0=angles(0,0,1.5707963267948966),Name="Torso"},
 
-	{meshid="4324138105",textureid="4324138210",C0=angles(-1.6144295580947547,1.5707963267948966,0)*cf(-0.125,0.3,0),Name="Left Arm"},
-	{meshid="4154474745",textureid="4154474807",C0=angles(1.5271630954950384,-1.5707963267948966,0)*cf(-0.125,-0.3,0),Name="Left Arm"},
-	{meshid="3030546036",textureid="3650191503",C0=angles(1.5271630954950384,1.5707963267948966,0)*cf(0.125,-0.3,0),Name="Right Arm"},
-	{meshid="3030546036",textureid="3443321249",C0=angles(-1.6144295580947547,-1.5707963267948966,0)*cf(0.125,0.3,0),Name="Right Arm"},
-	{meshid="3030546036",textureid="3360974849",C0=angles(1.5271630954950384,1.5707963267948966,0)*cf(-0.125,-0.35,0),Name="Left Leg"},
-	{meshid="3030546036",textureid="3360978739",C0=angles(-1.6144295580947547,-1.5707963267948966,0)*cf(-0.125,0.3,0),Name="Left Leg"},
-	{meshid="3030546036",textureid="3033898741",C0=angles(1.5271630954950384,-1.5707963267948966,0)*cf(0.125,-0.35,0),Name="Right Leg"},
-	{meshid="3030546036",textureid="3409604993",C0=angles(-1.6144295580947547,1.5707963267948966,0)*cf(0.125,0.3,0),Name="Right Leg"},
-	{meshid="4819720316",textureid="4819722776",C0=angles(0,0,0.2617993877991494),Name="Torso"}
+	{meshid="4324138105",textureid="4324138210",C0=cfMul(angles(-1.6144295580947547,1.5707963267948966,0),cf(-0.125,0.3,0)),Name="Left Arm"},
+	{meshid="4154474745",textureid="4154474807",C0=cfMul(angles(1.5271630954950384,-1.5707963267948966,0),cf(-0.125,-0.3,0)),Name="Left Arm"},
+	{meshid="3030546036",textureid="3650191503",C0=cfMul(angles(1.5271630954950384,1.5707963267948966,0),cf(0.125,-0.3,0)),Name="Right Arm"},
+	{meshid="3030546036",textureid="3443321249",C0=cfMul(angles(-1.6144295580947547,-1.5707963267948966,0),cf(0.125,0.3,0)),Name="Right Arm"},
+	{meshid="3030546036",textureid="3360974849",C0=cfMul(angles(1.5271630954950384,1.5707963267948966,0),cf(-0.125,-0.35,0)),Name="Left Leg"},
+	{meshid="3030546036",textureid="3360978739",C0=cfMul(angles(-1.6144295580947547,-1.5707963267948966,0),cf(-0.125,0.3,0)),Name="Left Leg"},
+	{meshid="3030546036",textureid="3033898741",C0=cfMul(angles(1.5271630954950384,-1.5707963267948966,0),cf(0.125,-0.35,0)),Name="Right Leg"},
+	{meshid="3030546036",textureid="3409604993",C0=cfMul(angles(-1.6144295580947547,1.5707963267948966,0),cf(0.125,0.3,0)),Name="Right Leg"},
+	{meshid="4819720316",textureid="4819722776",C0=angles(0,0,0.2617993877991494),Name="Torso"},
+
+	-- the noob rig:
+
+	{meshid="18640899369",textureid="18640899481",C0=cf_0,Name="Torso"},
+	{meshid="18640914129",textureid="18640914168",C0=cf_0,Name="Left Arm"},
+	{meshid="18640901641",textureid="18640901676",C0=cf_0,Name="Right Leg"},
+	{meshid="18640914129",textureid="18640914168",C0=cf_0,Name="Right Arm"},
+	{meshid="18640901641",textureid="18640901676",C0=cf_0,Name="Left Leg"},
+
+	-- other noob rig:
+
+	{meshid="126825022897778",textureid="125975972015302",C0=cf_0,Name="Torso"},
+	{meshid="137702817952968",textureid="135650240593878",C0=angles(0,0,1.5707963267948966),Name="Left Arm"},
+	{meshid="137702817952968",textureid="73798034827573",C0=angles(0,0,1.5707963267948966),Name="Right Leg"},
+	{meshid="137702817952968",textureid="135650240593878",C0=angles(0,0,1.5707963267948966),Name="Right Arm"},
+	{meshid="137702817952968",textureid="73798034827573",C0=angles(0,0,1.5707963267948966),Name="Left Leg"},
+	{meshid = "13058309233", textureid = "13058309280", C0 = angles(0, -3.141, 0), Name ="Head"},
+
+	-- Guest Rig
+	{meshid="125405780718494",textureid="136752500636691",C0=angles(0,0,1.57),Name="Right Leg"},
+	{meshid="125405780718494",textureid="136752500636691",C0=angles(0,0,1.57),Name="Left Leg"},
+	{meshid = "13058343355", textureid = "13058343394", C0 = angles(0, -3.141, 0), Name ="Head"},
+
+	-- Other White Black Rig.
+	{meshid="105141400603933",textureid="71060417496309",C0=angles(0,0,1.57),Name="Left Leg"},
+	{meshid="90736849096372",textureid="79186624401216",C0=angles(0,0,1.57),Name="Right Leg"},
+	{meshid="99608462237958",textureid="130809869695496",C0=angles(0,0,1.57),Name="Left Arm"},
+	{meshid="139733645770094",textureid="130809869695496",C0=angles(0,0,1.57),Name="Right Arm"},
+	{meshid="110684113028749",textureid="70661572547971",C0=angles(0,0,1.57),Name="Torso"},
+        
 }
 
 local gp=function(p,n,cl)
