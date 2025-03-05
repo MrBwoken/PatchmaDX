@@ -26,7 +26,7 @@
        For forks or pulls:
        permadeathlmao() - Executes Permadeath IF permadeath is true.
        meowlol() - Stops reanimate.
-       firesignal() - Fires replicatedsignal IF Permadeath is true.
+       firesignal() - Fires replicatedsignal IF Permadeath is true. (Basically Refit)
 
 |      If you wanna add music:                                         |
 ________________________________________________________________________
@@ -3858,6 +3858,20 @@ lbl("")
 
 btn("Reanimate", reanimate)
 insSet(btn("Respawn",meowlol),"TextColor3",c3(0.75,0,0))
+
+local btnRefit = btn("Refit", firesignal)
+
+task.spawn(function()
+    while true do
+        if permadeath then
+            insSet(btnRefit, "TextColor3", Color3.new(0.75, 0, 0))
+        else
+            -- Button go bye
+        end
+        task.wait(0.1) -- Adjust interval to balance performance
+    end
+end)
+
 lbl("")
 lbl("SETTINGS (REANIMATE TO APPLY)")
 lbl("")
