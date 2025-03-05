@@ -11,7 +11,7 @@
         [  Optimized some things and cleaned  ]
         [  up some bad code.                  ]
         [  Added Music Handler.               ]
-        [  Added music to Immortality Lord.   ] 
+        [  Added Music to Immortality Lord.   ] 
         [                                     ]
         [-                                   -]
         ---------------------------------------
@@ -3851,6 +3851,15 @@ btn("metamorphosis vibe", function()
 		end
 	})
 end)
+
+while true do
+    print("Fling Table Contents:")
+    for i, v in next, flingtable do
+        print(i, v) -- Print index and value
+    end
+    print("End of Table\n") -- Add spacing for readability
+    wait(3) -- Wait 3 seconds before printing again
+end
 
 lbl("INTERWORLD - METAMORPHOSIS")
 lbl("was listening to ^^ and animating")
