@@ -374,6 +374,12 @@ local accessorylimbs={
 	{meshid="125405780718494",textureid="136752500636691",C0=angles(0,0,1.57),Name="Left Leg"},
 	{meshid = "13058343355", textureid = "13058343394", C0 = angles(0, -3.141, 0), Name ="Head"},
 
+	-- Other White Black Rig.
+	{meshid="105141400603933",textureid="71060417496309",C0=angles(0,0,1.57),Name="Left Leg"},
+	{meshid="90736849096372",textureid="79186624401216",C0=angles(0,0,1.57),Name="Right Leg"},
+	{meshid="99608462237958",textureid="130809869695496",C0=angles(0,0,1.57),Name="Left Arm"},
+	{meshid="139733645770094",textureid="130809869695496",C0=angles(0,0,1.57),Name="Right Arm"},
+	{meshid="110684113028749",textureid="70661572547971",C0=angles(0,0,1.57),Name="Torso"},
         
 }
 
