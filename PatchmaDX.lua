@@ -5,13 +5,10 @@
         _______________________________________
         [-             Updates               -]
         [                                     ]
-        [  Noob Rig and Guest rig added.      ]
-        [  (thanks to emper's align help)     ]
-        [  Added Permadeath setting.          ]
-        [  Optimized some things and cleaned  ]
-        [  up some bad code.                  ]
-        [  Added Music Handler.               ]
-        [  Added music to Immortality Lord.   ] 
+        [  One new RIG!                       ] 
+        [  Permadeath Fling Support!          ]
+        [  Permadeath Refit!(auto refit soon) ]
+        [  Permadeath Respawn Support!        ]
         [                                     ]
         [-                                   -]
         ---------------------------------------
@@ -24,8 +21,9 @@
        loadstring(game:HttpGet("https://raw.githubusercontent.com/MrBwoken/PatchmaDX/refs/heads/PatchmaDX-TESTING/PatchmaDX.lua"))()
 
        For forks or pulls:
-       permadeathlmao() - Executes permadeath if permadeath is true.
+       permadeathlmao() - Executes Permadeath IF permadeath is true.
        meowlol() - Stops reanimate.
+       firesignal() - Fires replicatedsignal IF Permadeath is true. (Basically Refit)
 
 |      If you wanna add music:                                         |
 ________________________________________________________________________
@@ -76,10 +74,6 @@ ________________________________________________________________________
 
 
 
-
-
-
-
 -- Music Handler
 spawn(function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/MrBwoken/Handlers/refs/heads/main/%3C%7CX%7C%3E%20M%20%3C%7CZ%7C%3E%20(music%20handler)"))()
@@ -87,6 +81,9 @@ end)
 
 -- Music for scripts
 local music = true
+
+-- For Auto Refit
+local arefit = true
 
 -- Download Immortality Lord Songs
 local downloadsongs = function()
@@ -101,6 +98,8 @@ downloadsongs()
 mloopplaylist("IL.mp3", "IL2.mp3", "IL3.mp3")
 end
 
+
+
 -- Support detector
 spawn(function()
 if getgenv().replicatesignal then
@@ -113,6 +112,14 @@ else
     support = false
 end
 end)
+
+local firesignal = function()
+	if permadeath then
+        replicatesignal(game.Players.LocalPlayer.ConnectDiedSignalBackend)
+	else
+	-- Do nothing.
+        end
+end
 
 
 
@@ -736,7 +743,7 @@ local reanimate=function()
 		"what else do i optimize here"
 	]]
 	
-        permadeathlmao()
+        
 	local novoid = true --prevents parts from going under workspace.FallenPartsDestroyHeight if you control them
 	local speedlimit = 3000 --makes your parts move slower if the magnitude of their velocity is higher than this
 	local retVelTime = 0.51 --time that claimed parts have velocity to reclaim in case u lose them
@@ -1187,6 +1194,7 @@ local reanimate=function()
 						twait(0.16)
 					end
 					if respawntp==1 then
+						permadeathlmao()
 						local startpos=pos+v3(mrandom(-32,32),0,mrandom(-32,32))
 						local dir=nil
 						local poscheck=true
@@ -1213,11 +1221,13 @@ local reanimate=function()
 						insSet(hrp,"AssemblyAngularVelocity",v3_0)
 						twait(0.16)
 					elseif respawntp==2 then
+						permadeathlmao()
 						insSet(hrp,"CFrame",cfAdd(cfr,cfGet(cfr,"RightVector")*3.5-cfGet(cfr,"LookVector")*3.5))
 						insSet(hrp,"AssemblyLinearVelocity",v3_0)
 						insSet(hrp,"AssemblyAngularVelocity",v3_0)
 						twait(0.16)
 					elseif respawntp==3 then
+						permadeathlmao()
 						local t=osclock()+0.16
 						local startcf=cfAdd(cfMul(cfGet(cfr,"Rotation"),angles(1.5707963267948966,0,0)),pos*v3_101+v3_010*min(fpdh+30,v3Get(pos,"Y")-5))
 						while twait() do
@@ -1229,6 +1239,7 @@ local reanimate=function()
 							end
 						end
 					elseif respawntp == 4 then --[[hat.drop]]
+						permadeathlmao()
 						insSet(hrp, "AssemblyAngularVelocity", v3_0)
 						insSet(hrp, "AssemblyLinearVelocity", v3_0)
 						insSet(hrp, "CFrame", cf(insGet(cfr, "X"), insGet(ws, "FallenPartsDestroyHeight") + 0.356, insGet(cfr, "Z")))
@@ -1597,6 +1608,7 @@ local reanimate=function()
 		if (not targetpart) or (flingtable[targetpart]~=nil) then
 			return false
 		end
+		firesignal()
 		if highlightflingtargets then
 			local h=i("Highlight")
 			insSet(h,"Name",rs())
@@ -1609,6 +1621,7 @@ local reanimate=function()
 			flingtable[targetpart]=h
 		else
 			flingtable[targetpart]=false
+			
 		end
 		return true
 	end
@@ -3840,15 +3853,64 @@ btn("metamorphosis vibe", function()
 	})
 end)
 
+
+
+
+
 lbl("INTERWORLD - METAMORPHOSIS")
 lbl("was listening to ^^ and animating")
 lbl("")
 
 btn("Reanimate", reanimate)
 insSet(btn("Respawn",meowlol),"TextColor3",c3(0.75,0,0))
+insSet(btn("Refit",firesignal),"TextColor3",c3(0.75,0,0))
+
 lbl("")
 lbl("SETTINGS (REANIMATE TO APPLY)")
 lbl("")
+
+
+-- Set your conditions
+local permadeath = true
+local autorefit = true
+
+-- Check if "c" exists; replace the assignment with your actual condition/variable
+local c = true  -- For example purposes; set this to whatever condition you need
+
+-- Only execute the monitoring code if both conditions are met
+if not (permadeath and autorefit) then
+    return
+end
+
+-- Auto Refit
+local Players = game:GetService("Players")
+local localPlayer = Players.LocalPlayer
+
+
+local function monitorCharacter(character)
+    local connection
+    connection = character.ChildRemoved:Connect(function(child)
+        if child:IsA("Accessory") and c then  -- c
+            firesignal()  
+            connection:Disconnect() 
+            localPlayer.CharacterAdded:Wait()  
+            wait(0.5)
+            monitorCharacter(localPlayer.Character)
+        end
+    end)
+end
+
+
+if localPlayer.Character then
+    monitorCharacter(localPlayer.Character)
+end
+
+
+localPlayer.CharacterAdded:Connect(function(character)
+    wait(0.5) 
+    monitorCharacter(character)
+end)
+
 local swtc=function(txt,options,onchanged)
 	local current=0
 	local swtcbtn=nil
@@ -3878,6 +3940,13 @@ swtc("Music",{
 	{value=false,text="no"}
 },function(v)
 	music=v
+end)
+
+swtc("Auto Refit",{
+	{value=true,text="yes"},
+	{value=false,text="no"}
+},function(v)
+	arefit=v
 end)
 
 swtc("client sided placeholders",{
