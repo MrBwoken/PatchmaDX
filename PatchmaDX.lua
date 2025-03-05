@@ -3858,19 +3858,7 @@ lbl("")
 
 btn("Reanimate", reanimate)
 insSet(btn("Respawn",meowlol),"TextColor3",c3(0.75,0,0))
-
-local btnRefit = btn("Refit", firesignal)
-
-task.spawn(function()
-    while true do
-        if permadeath then
-            insSet(btnRefit, "TextColor3", Color3.new(0.75, 0, 0))
-        else
-            -- Button go bye
-        end
-        task.wait(0.1) -- Adjust interval to balance performance
-    end
-end)
+insSet(btn("Refit",firesignal),"TextColor3",c3(0.75,0,0))
 
 lbl("")
 lbl("SETTINGS (REANIMATE TO APPLY)")
