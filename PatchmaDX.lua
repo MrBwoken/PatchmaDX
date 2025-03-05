@@ -1586,8 +1586,6 @@ local reanimate=function()
 		if not c then
 			return false
 		end
-		print("fire fling event")
-		print(target)
 		if typeof(target)~="Instance" then 
 			target=insGet(mouse,"Target")
 			if not target then
