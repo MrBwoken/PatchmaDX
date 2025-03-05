@@ -37,6 +37,14 @@ To load the testing version, run:
 loadstring(game:HttpGet("https://raw.githubusercontent.com/MrBwoken/PatchmaDX/refs/heads/PatchmaDX-TESTING/PatchmaDX.lua"))()
 ```
 
+### Patchma but more rig support Release
+
+Use the following loadstring to launch a version of the NEWEST Patchma, the only edit being more rig support.
+
+```lua
+loadstring(game:HttpGet("https://raw.githubusercontent.com/MrBwoken/PatchmaDX/refs/heads/main/PatchmaButMoreRigSupport.lua"))()
+```
+
 ---
 
 ## Contributing
