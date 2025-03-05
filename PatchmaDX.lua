@@ -24,8 +24,9 @@
        loadstring(game:HttpGet("https://raw.githubusercontent.com/MrBwoken/PatchmaDX/refs/heads/PatchmaDX-TESTING/PatchmaDX.lua"))()
 
        For forks or pulls:
-       permadeathlmao() - Executes permadeath if permadeath is true.
+       permadeathlmao() - Executes Permadeath IF permadeath is true.
        meowlol() - Stops reanimate.
+       firesignal() - Fires replicatedsignal IF Permadeath is true.
 
 |      If you wanna add music:                                         |
 ________________________________________________________________________
@@ -40,10 +41,6 @@ ________________________________________________________________________
 -----------------------------------------------------------------------
        
 ]]
-
-
-
-
 
 
 
@@ -101,6 +98,8 @@ downloadsongs()
 mloopplaylist("IL.mp3", "IL2.mp3", "IL3.mp3")
 end
 
+
+
 -- Support detector
 spawn(function()
 if getgenv().replicatesignal then
@@ -113,6 +112,14 @@ else
     support = false
 end
 end)
+
+local firesignal = function()
+	if permadeath
+        replicatesignal(game.Players.LocalPlayer.ConnectDiedSignalBackend)
+	else
+	-- Do nothing.
+        end
+end
 
 
 
@@ -1187,6 +1194,7 @@ local reanimate=function()
 						twait(0.16)
 					end
 					if respawntp==1 then
+						permadeathlmao()
 						local startpos=pos+v3(mrandom(-32,32),0,mrandom(-32,32))
 						local dir=nil
 						local poscheck=true
@@ -1213,11 +1221,13 @@ local reanimate=function()
 						insSet(hrp,"AssemblyAngularVelocity",v3_0)
 						twait(0.16)
 					elseif respawntp==2 then
+						permadeathlmao()
 						insSet(hrp,"CFrame",cfAdd(cfr,cfGet(cfr,"RightVector")*3.5-cfGet(cfr,"LookVector")*3.5))
 						insSet(hrp,"AssemblyLinearVelocity",v3_0)
 						insSet(hrp,"AssemblyAngularVelocity",v3_0)
 						twait(0.16)
 					elseif respawntp==3 then
+						permadeathlmao()
 						local t=osclock()+0.16
 						local startcf=cfAdd(cfMul(cfGet(cfr,"Rotation"),angles(1.5707963267948966,0,0)),pos*v3_101+v3_010*min(fpdh+30,v3Get(pos,"Y")-5))
 						while twait() do
@@ -1229,6 +1239,7 @@ local reanimate=function()
 							end
 						end
 					elseif respawntp == 4 then --[[hat.drop]]
+						permadeathlmao()
 						insSet(hrp, "AssemblyAngularVelocity", v3_0)
 						insSet(hrp, "AssemblyLinearVelocity", v3_0)
 						insSet(hrp, "CFrame", cf(insGet(cfr, "X"), insGet(ws, "FallenPartsDestroyHeight") + 0.356, insGet(cfr, "Z")))
@@ -1609,6 +1620,7 @@ local reanimate=function()
 			flingtable[targetpart]=h
 		else
 			flingtable[targetpart]=false
+			
 		end
 		return true
 	end
