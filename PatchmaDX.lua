@@ -1186,8 +1186,8 @@ local reanimate=function()
 							if v then
 								Destroy(v)
 							end
+							print(flingtable[i])
 							flingtable[i]=nil
-							firesignal()
 						end
 						insSet(hrp,"AssemblyLinearVelocity",v3_0)
 						insSet(hrp,"AssemblyAngularVelocity",v3_0)
