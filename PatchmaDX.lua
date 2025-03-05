@@ -743,7 +743,7 @@ local reanimate=function()
 		"what else do i optimize here"
 	]]
 	
-        permadeathlmao()
+        
 	local novoid = true --prevents parts from going under workspace.FallenPartsDestroyHeight if you control them
 	local speedlimit = 3000 --makes your parts move slower if the magnitude of their velocity is higher than this
 	local retVelTime = 0.51 --time that claimed parts have velocity to reclaim in case u lose them
