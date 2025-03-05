@@ -1676,6 +1676,7 @@ local reanimate=function()
 			end
 			for i,v in next,flingtable do
 				if v then --it could be false
+					print(v) -- debugging
 					Destroy(v)
 				end
 			end
@@ -3853,21 +3854,7 @@ btn("metamorphosis vibe", function()
 end)
 
 
-while true do
-    pcall(function()
-        if type(flingtable) == "table" then -- Ensure it's a table
-            print("Fling Table Contents:")
-            for i, v in next, flingtable do
-                print(i, v) -- Print index and value safely
-            end
-            print("End of Table\n")
-        else
-            print("flingtable is nil or not a table!")
-        end
-    end)
-    
-    wait(3) -- Wait 3 seconds before printing again
-end
+
 
 
 lbl("INTERWORLD - METAMORPHOSIS")
