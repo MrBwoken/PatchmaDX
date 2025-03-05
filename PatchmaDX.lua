@@ -114,7 +114,7 @@ end
 end)
 
 local firesignal = function()
-	if permadeath
+	if permadeath then
         replicatesignal(game.Players.LocalPlayer.ConnectDiedSignalBackend)
 	else
 	-- Do nothing.
