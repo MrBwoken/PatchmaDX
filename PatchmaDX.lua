@@ -79,8 +79,6 @@ spawn(function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/MrBwoken/Handlers/refs/heads/main/%3C%7CX%7C%3E%20M%20%3C%7CZ%7C%3E%20(music%20handler)"))()
 end)
 
--- Music for scripts
-local music = true
 
 -- For Auto Refit
 local arefit = true
@@ -110,6 +108,17 @@ else
     print("❌ Your executor doesn't support `replicatesignal`!")
     permadeath = false
     support = false
+end
+end)
+
+-- Support detector
+spawn(function()
+if getgenv().getcustomasset then
+    print("✅ Your executor supports `getcustomasset`!")
+    music = true
+else
+    print("❌ Your executor doesn't support `getcustomasset`!")
+    music = false
 end
 end)
 
