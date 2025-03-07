@@ -5,11 +5,11 @@
         _______________________________________
         [-             Updates               -]
         [                                     ]
-        [  One new RIG!                       ] 
-        [  Permadeath Fling Support!          ]
-        [  Permadeath Refit! ( auto refit)    ]
-        [  Permadeath Respawn Support!        ]
-        [  Added Hatdrop!                     ]
+        [    Added Hatdrop!                   ] 
+        [                                     ]
+        [                                     ]
+        [                                     ]
+        [                                     ]
         [                                     ]
         [-                                   -]
         ---------------------------------------
@@ -4037,6 +4037,7 @@ local function autorefit()
     end)
 end
 
+autorefit()
 
 
 local swtc=function(txt,options,onchanged)
@@ -4057,83 +4058,83 @@ local swtc=function(txt,options,onchanged)
 end
 
 swtc("Permadeath",{
-	{value=true,text="yes"},
-	{value=false,text="no"}
+	{value=true,text="Yes!"},
+	{value=false,text="No!"}
 },function(v)
 	permadeath=v
 end)
 
 swtc("Music",{
-	{value=true,text="yes"},
-	{value=false,text="no"}
+	{value=true,text="Yes!"},
+	{value=false,text="No!"}
 },function(v)
 	music=v
 end)
 
 swtc("Auto Refit",{
-	{value=true,text="yes"},
-	{value=false,text="no"}
+	{value=true,text="Yes!"},
+	{value=false,text="No!"}
 },function(v)
 	arefit=v
 end)
 
-swtc("client sided placeholders",{
-	{value=true,text="yes"},
-	{value=false,text="no"}
+swtc("Client-Sided Placeholders",{
+	{value=true,text="Yes!"},
+	{value=false,text="No!"}
 },function(v)
 	placeholders=v
 end)
 
-swtc("highlight fling targets",{
-	{value=true,text="yes"},
-	{value=false,text="no"}
+swtc("Highlight Targets",{
+	{value=true,text="Yes!"},
+	{value=false,text="No!"}
 },function(v)
 	highlightflingtargets=v
 end)
 
-swtc("allow shiftlock",{
-	{value=true,text="yes"},
-	{value=false,text="no"}
+swtc("Allow Shiftlock",{
+	{value=true,text="Yes!"},
+	{value=false,text="No!"}
 },function(v)
 	allowshiftlock=v
 end)
 
-swtc("ctrl click tp",{
-	{value=true,text="yes"},
-	{value=false,text="no"}
+swtc("ctrl+click tp",{
+	{value=true,text="Yes!"},
+	{value=false,text="No!"}
 },function(v)
 	ctrltp=v
 end)
 
-swtc("click fling",{
-	{value=true,text="yes"},
-	{value=false,text="no"}
+swtc("Click Fling",{
+	{value=true,text="Yes!"},
+	{value=false,text="No!"}
 },function(v)
 	clickfling=v
 end)
 
-swtc("changestate when fling",{
-	{value=true,text="yes"},
-	{value=false,text="no"}
+swtc("Changestate when Flinging",{
+	{value=true,text="Yes!"},
+	{value=false,text="No!"}
 },function(v)
 	flingchangestate=v
 end)
 lbl("(limb collision)")
 
-swtc("respawn tp",{
-	{value=3,text="hide body"},
-	{value=0,text="stay at spawn"},
-	{value=1,text="random tp close"},
-	{value=2,text="behind char"},
-	{value=4,text="hat drop"}
+swtc("Respawn Options",{
+	{value=3,text="Hide Body"},
+	{value=0,text="Stay at Spawn"},
+	{value=1,text="Random TP close"},
+	{value=2,text="Behind Character"},
+	{value=4,text="HATDROP"}
 },function(v)
 	respawntp=v
 end)
 
 local disguiscripts=nil
-swtc("new gui scripts",{
-	{value=true,text="disable"},
-	{value=false,text="keep"}
+swtc("New Gui Scripts",{
+	{value=true,text="Disable!"},
+	{value=false,text="Keep!"}
 },function(v)
 	disguiscripts=v
 end)
@@ -4143,13 +4144,13 @@ Connect(insGet(pg,"DescendantAdded"),function(v)
 	end
 end)
 
-swtc("new character scripts",{
+swtc("New Character Scripts",{
 	{value=function(v)
 		if IsA(v,"Script") then --mind Enum.RunContext.Client
 			insSet(v,"Disabled",true)
 		end
-	end,text="disable"},
-	{value=false,text="keep"}
+	end,text="Disable"},
+	{value=false,text="Keep"}
 },function(v)
 	discharscripts=v
 end)
@@ -4162,16 +4163,16 @@ swtc("breakjoints",{
 	breakjointsmethod=v
 end)
 
-swtc("coregui death effect",{
-	{value=true,text="disable"},
-	{value=false,text="dont modify"},
+swtc("Death Effect",{
+	{value=true,text="Disable!"},
+	{value=false,text="Keep!"},
 },function(v)
 	hidedeatheffect=v
 end)
 
-swtc("set simulation radius",{
-	{value=true,text="yes"},
-	{value=false,text="no"},
+swtc("Set Simulation Radius",{
+	{value=true,text="Yes!"},
+	{value=false,text="No!"},
 },function(v)
 	simrad=v
 end)
