@@ -4004,41 +4004,40 @@ lbl("")
 
 
 
+local function autorefit()
+    -- Only execute the monitoring code if both conditions are met
+    if not (permadeath and arefit) then
+        return
+    end
 
+    -- Auto Refit
+    local Players = game:GetService("Players")
+    local localPlayer = Players.LocalPlayer
 
--- Only execute the monitoring code if both conditions are met
-if not (permadeath and arefit) then
-    return
-end
+    local function monitorCharacter(character)
+        local connection
+        connection = character.ChildRemoved:Connect(function(child)
+            if child:IsA("Accessory") and c then  -- c (assuming this is a missing variable)
+                firesignal()  
+                connection:Disconnect() 
+                localPlayer.CharacterAdded:Wait()  
+                wait(0.5)
+                monitorCharacter(localPlayer.Character)
+            end
+        end)
+    end
 
--- Auto Refit
-local Players = game:GetService("Players")
-local localPlayer = Players.LocalPlayer
+    if localPlayer.Character then
+        monitorCharacter(localPlayer.Character)
+    end
 
-
-local function monitorCharacter(character)
-    local connection
-    connection = character.ChildRemoved:Connect(function(child)
-        if child:IsA("Accessory") and c then  -- c
-            firesignal()  
-            connection:Disconnect() 
-            localPlayer.CharacterAdded:Wait()  
-            wait(0.5)
-            monitorCharacter(localPlayer.Character)
-        end
+    localPlayer.CharacterAdded:Connect(function(character)
+        wait(0.5) 
+        monitorCharacter(character)
     end)
 end
 
 
-if localPlayer.Character then
-    monitorCharacter(localPlayer.Character)
-end
-
-
-localPlayer.CharacterAdded:Connect(function(character)
-    wait(0.5) 
-    monitorCharacter(character)
-end)
 
 local swtc=function(txt,options,onchanged)
 	local current=0
