@@ -4004,7 +4004,8 @@ lbl("")
 
 
 
-local function autorefit()
+spawn(function()
+    task.wait(0.8)
     -- Only execute the monitoring code if both conditions are met
     if not (permadeath and arefit) then
         return
@@ -4017,7 +4018,7 @@ local function autorefit()
     local function monitorCharacter(character)
         local connection
         connection = character.ChildRemoved:Connect(function(child)
-            if child:IsA("Accessory") and c then  -- c (assuming this is a missing variable)
+            if child:IsA("Accessory") and c then 
                 firesignal()  
                 connection:Disconnect() 
                 localPlayer.CharacterAdded:Wait()  
@@ -4037,7 +4038,7 @@ local function autorefit()
     end)
 end
 
-autorefit()
+
 
 
 local swtc=function(txt,options,onchanged)
