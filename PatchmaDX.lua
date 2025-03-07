@@ -4014,11 +4014,11 @@ spawn(function()
     local localPlayer = Players.LocalPlayer
 
     local function monitorCharacter(character)
-	 if not (permadeath and arefit) then
-        return
-        end
         local connection
         connection = character.ChildRemoved:Connect(function(child)
+	    if not (permadeath and arefit) then
+            return
+            end
             if child:IsA("Accessory") and c then 
                 firesignal()  
                 connection:Disconnect() 
