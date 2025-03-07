@@ -449,18 +449,6 @@ until plr.Character ~= character or dropped
 
 if dropped then
     print("Patchma DX HATDROP: Worked!")
-    workspace.CurrentCamera.CameraSubject = campart
-    for i,v in pairs(character:GetChildren()) do
-        if v:IsA("Accessory") and v:FindFirstChild("Handle") and v.Handle.CanCollide then
-            spawn(function()
-                for i = 1,10 do
-                    v.Handle.CFrame = start
-                    v.Handle.Velocity = Vector3.new(0,50,0)
-                    task.wait()
-                end
-            end)
-        end
-    end
 else
     print("Patchma DX HATDROP: Failed!")
     end
