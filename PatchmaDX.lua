@@ -4007,15 +4007,16 @@ lbl("")
 spawn(function()
     task.wait(0.8)
     -- Only execute the monitoring code if both conditions are met
-    if not (permadeath and arefit) then
-        return
-    end
+   
 
     -- Auto Refit
     local Players = game:GetService("Players")
     local localPlayer = Players.LocalPlayer
 
     local function monitorCharacter(character)
+	 if not (permadeath and arefit) then
+        return
+        end
         local connection
         connection = character.ChildRemoved:Connect(function(child)
             if child:IsA("Accessory") and c then 
