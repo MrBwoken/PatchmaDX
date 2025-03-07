@@ -12,8 +12,17 @@
 
 ## Overview
 
-Patchma DX introduces **Permadeath** and enhanced **rig support** for a unique scripting experience.  
+Patchma DX introduces **Permadeath** and enhanced functionality for a unique scripting experience.  
 We love your feedback—feel free to drop your suggestions in the [Issues](https://github.com/MrBwoken/PatchmaDX/issues) section, and pull requests are always welcome!
+
+---
+
+## What makes Patchma DX so special?
+
+- **Permadeath!** Full Permadeath support, supports fling, refit, and autorefit!
+- **Frequently updates!** Patchma updates are slow, Patchma DX updates more and lets you make pull requests and issues.
+- **More Rig Support!** Patchma supports very old rigs, but not new ones! Patchma DX has more Rig Support, and you can make an issue with the rig's IDs, and I will add it.
+- **Hatdrop!** Patchma doesn’t support hatdrop; they tried adding it once but failed. Patchma DX has **WORKING HATDROP!** It only works with **SHOULDER AND HEAD RIGS** as Hatdrop only supports those.
 
 ---
 

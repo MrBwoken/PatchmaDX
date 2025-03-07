@@ -5,10 +5,11 @@
         _______________________________________
         [-             Updates               -]
         [                                     ]
-        [  One new RIG!                       ] 
-        [  Permadeath Fling Support!          ]
-        [  Permadeath Refit!(auto refit soon) ]
-        [  Permadeath Respawn Support!        ]
+        [    Added Hatdrop!                   ] 
+        [                                     ]
+        [                                     ]
+        [                                     ]
+        [                                     ]
         [                                     ]
         [-                                   -]
         ---------------------------------------
@@ -326,6 +327,134 @@ local permadeathlmao = function()
         wait(game.Players.RespawnTime + .1)
 	else
 	-- Do nothing.
+	end
+end
+
+-- Code by ShownApe!!! I didn't make hatdrop!
+local hatdrop = function()
+	local fph = workspace.FallenPartsDestroyHeight
+
+	local plr = game.Players.LocalPlayer
+	local character = plr.Character
+	local hrp = character:WaitForChild("HumanoidRootPart")
+	local torso = character:FindFirstChild("UpperTorso") or character:FindFirstChild("Torso")
+	local start = hrp.CFrame
+
+	local campart = Instance.new("Part", character)
+	campart.Transparency = 1
+	campart.CanCollide = false
+	campart.Size = Vector3.one
+	campart.Position = start.Position
+	campart.Anchored = true
+
+	local function updatestate(hat, state)
+		if sethiddenproperty then
+			sethiddenproperty(hat, "BackendAccoutrementState", state)
+		elseif setscriptable then
+			setscriptable(hat, "BackendAccoutrementState", true)
+			hat.BackendAccoutrementState = state
+		else
+			local success = pcall(function()
+				hat.BackendAccoutrementState = state
+			end)
+			if not success then
+				error("executor not supported, sorry!")
+			end
+		end
+	end
+
+	local allhats = {}
+	for i, v in pairs(character:GetChildren()) do
+		if v:IsA("Accessory") then
+			local handle = v:FindFirstChild("Handle")
+			if handle and (handle:FindFirstChild("HatAttachment") or handle:FindFirstChild("LeftShoulderAttachment") or handle:FindFirstChild("RightShoulderAttachment")) then
+				table.insert(allhats, v)
+			end
+		end
+	end
+
+	local locks = {}
+	for i, v in pairs(allhats) do
+		table.insert(locks, v.Changed:Connect(function(p)
+			if p == "BackendAccoutrementState" then
+				updatestate(v, 0)
+			end
+		end))
+		updatestate(v, 2)
+	end
+
+	workspace.FallenPartsDestroyHeight = 0/0
+
+	local function play(id, speed, prio, weight)
+		local Anim = Instance.new("Animation")
+		Anim.AnimationId = "https" .. tostring(math.random(1000000, 9999999)) .. "=" .. tostring(id)
+		local track = character.Humanoid:LoadAnimation(Anim)
+		track.Priority = prio
+		track:Play()
+		track:AdjustSpeed(speed)
+		track:AdjustWeight(weight)
+		return track
+	end
+
+	local r6fall = 180436148
+	local r15fall = 507767968
+
+	local dropcf = CFrame.new(character.HumanoidRootPart.Position.x, fph - .25, character.HumanoidRootPart.Position.z)
+	if character.Humanoid.RigType == Enum.HumanoidRigType.R15 then
+		dropcf = dropcf * CFrame.Angles(math.rad(20), 0, 0)
+		character.Humanoid:ChangeState(16)
+		play(r15fall, 1, 5, 1).TimePosition = .1
+	else
+		play(r6fall, 1, 5, 1).TimePosition = .1
+	end
+
+	spawn(function()
+		while hrp.Parent ~= nil do
+			hrp.CFrame = dropcf
+			hrp.Velocity = Vector3.new(0, 25, 0)
+			hrp.RotVelocity = Vector3.new(0, 0, 0)
+			game:GetService("RunService").Heartbeat:wait()
+		end
+	end)
+
+	task.wait(.25)
+	character.Humanoid:ChangeState(15)
+	torso.AncestryChanged:wait()
+
+	for i, v in pairs(locks) do
+		v:Disconnect()
+	end
+	for i, v in pairs(allhats) do
+		updatestate(v, 4)
+	end
+
+	spawn(function()
+		plr.CharacterAdded:wait():WaitForChild("HumanoidRootPart", 10).CFrame = start
+		workspace.FallenPartsDestroyHeight = fph
+	end)
+
+	local dropped = false
+	repeat
+		local foundhandle = false
+		for i, v in pairs(allhats) do
+			if v:FindFirstChild("Handle") then
+				foundhandle = true
+				if v.Handle.CanCollide then
+					dropped = true
+					break
+				end
+			end
+		end
+		if not foundhandle then
+			break
+		end
+		task.wait()
+	until plr.Character ~= character or dropped
+
+	if dropped then
+		print("Patchma DX HATDROP: Worked!")
+	else
+		print("Patchma DX HATDROP: Failed!")
 	end
 end
 
@@ -1249,9 +1378,7 @@ local reanimate=function()
 						end
 					elseif respawntp == 4 then --[[hat.drop]]
 						permadeathlmao()
-						insSet(hrp, "AssemblyAngularVelocity", v3_0)
-						insSet(hrp, "AssemblyLinearVelocity", v3_0)
-						insSet(hrp, "CFrame", cf(insGet(cfr, "X"), insGet(ws, "FallenPartsDestroyHeight") + 0.356, insGet(cfr, "Z")))
+						hatdrop()
 						twait(0.16)	
 					end
 					if newc~=c then
@@ -3879,46 +4006,43 @@ lbl("SETTINGS (REANIMATE TO APPLY)")
 lbl("")
 
 
--- Set your conditions
-local permadeath = true
-local autorefit = true
 
--- Check if "c" exists; replace the assignment with your actual condition/variable
-local c = true  -- For example purposes; set this to whatever condition you need
+spawn(function()
+    task.wait(0.8)
+    -- Only execute the monitoring code if both conditions are met
+   
 
--- Only execute the monitoring code if both conditions are met
-if not (permadeath and autorefit) then
-    return
-end
+    -- Auto Refit
+    local Players = game:GetService("Players")
+    local localPlayer = Players.LocalPlayer
 
--- Auto Refit
-local Players = game:GetService("Players")
-local localPlayer = Players.LocalPlayer
+    local function monitorCharacter(character)
+        local connection
+        connection = character.ChildRemoved:Connect(function(child)
+	    if not (permadeath and arefit) then
+            return
+            end
+            if child:IsA("Accessory") and c then 
+                firesignal()  
+                connection:Disconnect() 
+                localPlayer.CharacterAdded:Wait()  
+                wait(0.5)
+                monitorCharacter(localPlayer.Character)
+            end
+        end)
+    end
 
+    if localPlayer.Character then
+        monitorCharacter(localPlayer.Character)
+    end
 
-local function monitorCharacter(character)
-    local connection
-    connection = character.ChildRemoved:Connect(function(child)
-        if child:IsA("Accessory") and c then  -- c
-            firesignal()  
-            connection:Disconnect() 
-            localPlayer.CharacterAdded:Wait()  
-            wait(0.5)
-            monitorCharacter(localPlayer.Character)
-        end
+    localPlayer.CharacterAdded:Connect(function(character)
+        wait(0.5) 
+        monitorCharacter(character)
     end)
-end
-
-
-if localPlayer.Character then
-    monitorCharacter(localPlayer.Character)
-end
-
-
-localPlayer.CharacterAdded:Connect(function(character)
-    wait(0.5) 
-    monitorCharacter(character)
 end)
+
+
 
 local swtc=function(txt,options,onchanged)
 	local current=0
@@ -3938,83 +4062,83 @@ local swtc=function(txt,options,onchanged)
 end
 
 swtc("Permadeath",{
-	{value=true,text="yes"},
-	{value=false,text="no"}
+	{value=true,text="Yes!"},
+	{value=false,text="No!"}
 },function(v)
 	permadeath=v
 end)
 
 swtc("Music",{
-	{value=true,text="yes"},
-	{value=false,text="no"}
+	{value=true,text="Yes!"},
+	{value=false,text="No!"}
 },function(v)
 	music=v
 end)
 
 swtc("Auto Refit",{
-	{value=true,text="yes"},
-	{value=false,text="no"}
+	{value=true,text="Yes!"},
+	{value=false,text="No!"}
 },function(v)
 	arefit=v
 end)
 
-swtc("client sided placeholders",{
-	{value=true,text="yes"},
-	{value=false,text="no"}
+swtc("Client-Sided Placeholders",{
+	{value=true,text="Yes!"},
+	{value=false,text="No!"}
 },function(v)
 	placeholders=v
 end)
 
-swtc("highlight fling targets",{
-	{value=true,text="yes"},
-	{value=false,text="no"}
+swtc("Highlight Targets",{
+	{value=true,text="Yes!"},
+	{value=false,text="No!"}
 },function(v)
 	highlightflingtargets=v
 end)
 
-swtc("allow shiftlock",{
-	{value=true,text="yes"},
-	{value=false,text="no"}
+swtc("Allow Shiftlock",{
+	{value=true,text="Yes!"},
+	{value=false,text="No!"}
 },function(v)
 	allowshiftlock=v
 end)
 
-swtc("ctrl click tp",{
-	{value=true,text="yes"},
-	{value=false,text="no"}
+swtc("ctrl+click tp",{
+	{value=true,text="Yes!"},
+	{value=false,text="No!"}
 },function(v)
 	ctrltp=v
 end)
 
-swtc("click fling",{
-	{value=true,text="yes"},
-	{value=false,text="no"}
+swtc("Click Fling",{
+	{value=true,text="Yes!"},
+	{value=false,text="No!"}
 },function(v)
 	clickfling=v
 end)
 
-swtc("changestate when fling",{
-	{value=true,text="yes"},
-	{value=false,text="no"}
+swtc("Changestate when Flinging",{
+	{value=true,text="Yes!"},
+	{value=false,text="No!"}
 },function(v)
 	flingchangestate=v
 end)
 lbl("(limb collision)")
 
-swtc("respawn tp",{
-	{value=3,text="hide body"},
-	{value=0,text="stay at spawn"},
-	{value=1,text="random tp close"},
-	{value=2,text="behind char"},
-	{value=4,text="hat drop"}
+swtc("Respawn Options",{
+	{value=3,text="Hide Body"},
+	{value=0,text="Stay at Spawn"},
+	{value=1,text="Random TP close"},
+	{value=2,text="Behind Character"},
+	{value=4,text="HATDROP"}
 },function(v)
 	respawntp=v
 end)
 
 local disguiscripts=nil
-swtc("new gui scripts",{
-	{value=true,text="disable"},
-	{value=false,text="keep"}
+swtc("New Gui Scripts",{
+	{value=true,text="Disable!"},
+	{value=false,text="Keep!"}
 },function(v)
 	disguiscripts=v
 end)
@@ -4024,13 +4148,13 @@ Connect(insGet(pg,"DescendantAdded"),function(v)
 	end
 end)
 
-swtc("new character scripts",{
+swtc("New Character Scripts",{
 	{value=function(v)
 		if IsA(v,"Script") then --mind Enum.RunContext.Client
 			insSet(v,"Disabled",true)
 		end
-	end,text="disable"},
-	{value=false,text="keep"}
+	end,text="Disable"},
+	{value=false,text="Keep"}
 },function(v)
 	discharscripts=v
 end)
@@ -4043,16 +4167,16 @@ swtc("breakjoints",{
 	breakjointsmethod=v
 end)
 
-swtc("coregui death effect",{
-	{value=true,text="disable"},
-	{value=false,text="dont modify"},
+swtc("Death Effect",{
+	{value=true,text="Disable!"},
+	{value=false,text="Keep!"},
 },function(v)
 	hidedeatheffect=v
 end)
 
-swtc("set simulation radius",{
-	{value=true,text="yes"},
-	{value=false,text="no"},
+swtc("Set Simulation Radius",{
+	{value=true,text="Yes!"},
+	{value=false,text="No!"},
 },function(v)
 	simrad=v
 end)
