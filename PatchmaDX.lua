@@ -4036,7 +4036,7 @@ spawn(function()
         wait(0.5) 
         monitorCharacter(character)
     end)
-end
+end)
 
 
 
