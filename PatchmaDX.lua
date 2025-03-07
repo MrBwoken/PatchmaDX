@@ -9,6 +9,7 @@
         [  Permadeath Fling Support!          ]
         [  Permadeath Refit! ( auto refit)    ]
         [  Permadeath Respawn Support!        ]
+        [  Added Hatdrop!                     ]
         [                                     ]
         [-                                   -]
         ---------------------------------------
@@ -4002,12 +4003,9 @@ lbl("SETTINGS (REANIMATE TO APPLY)")
 lbl("")
 
 
--- Set your conditions
-local permadeath = true
-local autorefit = true
 
--- Check if "c" exists; replace the assignment with your actual condition/variable
-local c = true  -- For example purposes; set this to whatever condition you need
+
+local c = nil  
 
 -- Only execute the monitoring code if both conditions are met
 if not (permadeath and autorefit) then
