@@ -330,6 +330,7 @@ local permadeathlmao = function()
 end
 
 -- Code by ShownApe!!! I didn't make hatdrop!
+-- Only works on shoulder and head hats currently.
 local hatdrop = function()
 	local fph = workspace.FallenPartsDestroyHeight
 
