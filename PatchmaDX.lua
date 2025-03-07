@@ -4040,7 +4040,6 @@ end)
 
 
 
-
 local swtc=function(txt,options,onchanged)
 	local current=0
 	local swtcbtn=nil
