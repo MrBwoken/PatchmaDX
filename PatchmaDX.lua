@@ -4005,10 +4005,9 @@ lbl("")
 
 
 
-local c = nil  
 
 -- Only execute the monitoring code if both conditions are met
-if not (permadeath and autorefit) then
+if not (permadeath and arefit) then
     return
 end
 
