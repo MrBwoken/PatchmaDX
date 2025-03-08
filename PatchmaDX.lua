@@ -837,7 +837,8 @@ if support == true then
 	-- Nothing at ducking all!
 else
 	lbl("Permadeath not supported!")
-	lbl("Enable it manually in settings!")
+	lbl("Enable it manually in settings")
+	lbl("if you think your executor supports it")
 	lbl("")
 end
 end)
@@ -4145,7 +4146,7 @@ end)
 
 local disguiscripts=nil
 swtc("New Gui Scripts",{
-	{value=true,text="Disable!"},
+	{value=true,text="Disabled!"},
 	{value=false,text="Keep!"}
 },function(v)
 	disguiscripts=v
@@ -4161,7 +4162,7 @@ swtc("New Character Scripts",{
 		if IsA(v,"Script") then --mind Enum.RunContext.Client
 			insSet(v,"Disabled",true)
 		end
-	end,text="Disable"},
+	end,text="Disabled"},
 	{value=false,text="Keep"}
 },function(v)
 	discharscripts=v
@@ -4176,7 +4177,7 @@ swtc("breakjoints",{
 end)
 
 swtc("Death Effect",{
-	{value=true,text="Disable!"},
+	{value=true,text="Disabled!"},
 	{value=false,text="Keep!"},
 },function(v)
 	hidedeatheffect=v
