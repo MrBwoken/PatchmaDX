@@ -20,9 +20,9 @@ We love your feedback—feel free to drop your suggestions in the [Issues](https
 ## What makes Patchma DX so special?
 
 - **Permadeath!** Full Permadeath support, supports fling, refit, and autorefit!
-- **Frequently updates!** Patchma updates are slow, Patchma DX updates more and lets you make pull requests and issues.
+- **Frequently updates!** Patchma DX updates frequently and lets you make pull requests and issues.
 - **More Rig Support!** Patchma supports very old rigs, but not new ones! Patchma DX has more Rig Support, and you can make an issue with the rig's IDs, and I will add it.
-- **Hatdrop!** Patchma doesn’t support hatdrop; they tried adding it once but failed. Patchma DX has **WORKING HATDROP!** It only works with **SHOULDER AND HEAD RIGS** as Hatdrop only supports those.
+- **Hatdrop!** Patchma doesn’t support hatdrop, Patchma DX has **WORKING HATDROP!** It only works with **SHOULDER AND HEAD RIGS** as Hatdrop only supports those.
 
 ---
 
