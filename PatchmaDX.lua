@@ -3680,7 +3680,7 @@ btn("Immortality Lord", function()
 		idle=animations1,walk=animations1,jump=animations0,fall=animations0
 	})
 end)
-lbl("My fav <3 | (offsale)")
+lbl("My fav <3 | ( og rig offsale)")
 lbl("")
 
 btn("goofy trolus (goofy)", function()
