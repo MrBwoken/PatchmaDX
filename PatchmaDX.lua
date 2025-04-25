@@ -1403,6 +1403,11 @@ local reanimate=function()
 						else
 							insGet(newc,"BreakJoints")(newc)
 						end
+					elseif breakjointsmethod==3 then
+						local h=FindFirstChildOfClass(newc, "Humanoid")
+						if h then
+						        repbreakjoints()
+						end	
 					else
 						insGet(newc,"BreakJoints")(newc)
 					end
