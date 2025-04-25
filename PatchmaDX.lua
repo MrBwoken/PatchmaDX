@@ -72,33 +72,6 @@ ________________________________________________________________________
 
 
 
-
-
-
--- Music Handler
-spawn(function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/MrBwoken/Handlers/refs/heads/main/%3C%7CX%7C%3E%20M%20%3C%7CZ%7C%3E%20(music%20handler)"))()
-end)
-
-
--- For Auto Refit
-local arefit = true
-
--- Download Immortality Lord Songs
-local downloadsongs = function()
-mdownload("https://github.com/MrBwoken/Music-/raw/refs/heads/main/Immortality%20Lord/ImmortalityLord.mp3", "IL.mp3")
-mdownload("https://github.com/MrBwoken/Music-/raw/refs/heads/main/Immortality%20Lord/ImmortalityLord2.mp3", "IL2.mp3")
-mdownload("https://github.com/MrBwoken/Music-/raw/refs/heads/main/Immortality%20Lord/ImmortalityLord3.mp3", "IL3.mp3")
-end
-
--- Fire UP
-local fireup = function()
-downloadsongs()
-mloopplaylist("IL.mp3", "IL2.mp3", "IL3.mp3")
-end
-
-
-
 -- Support detector
 spawn(function()
 if getgenv().replicatesignal then
@@ -121,7 +94,51 @@ else
     print("❌ Your executor doesn't support `getcustomasset`!")
     music = false
 end
+end)	
+
+-- Support detector
+spawn(function()
+if getgenv().loadstring then
+    print("✅ Your executor supports `loadstring`!")
+    loadstringsupport = true
+else
+    print("❌ Your executor doesn't support `loadstring`!")
+    loadstringsupport = false
+    music = false
+end
+end)	
+
+-- Music Handler
+if loadstringsupport then
+spawn(function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/MrBwoken/Handlers/refs/heads/main/%3C%7CX%7C%3E%20M%20%3C%7CZ%7C%3E%20(music%20handler)"))()
 end)
+else
+      -- Do nothing.
+end
+
+
+
+
+-- Download Immortality Lord Songs
+local downloadsongs = function()
+mdownload("https://github.com/MrBwoken/Music-/raw/refs/heads/main/Immortality%20Lord/ImmortalityLord.mp3", "IL.mp3")
+mdownload("https://github.com/MrBwoken/Music-/raw/refs/heads/main/Immortality%20Lord/ImmortalityLord2.mp3", "IL2.mp3")
+mdownload("https://github.com/MrBwoken/Music-/raw/refs/heads/main/Immortality%20Lord/ImmortalityLord3.mp3", "IL3.mp3")
+end
+
+if loadstringsupport then
+-- Fire UP
+local fireup = function()
+downloadsongs()
+mloopplaylist("IL.mp3", "IL2.mp3", "IL3.mp3")
+end
+else
+	-- Do nothing.
+end
+
+
+
 
 local firesignal = function()
 	if permadeath then
@@ -863,6 +880,7 @@ local respawntp=nil
 local breakjointsmethod=nil
 local simrad=false
 local hidedeatheffect=nil
+local arefit = true
 
 
 
