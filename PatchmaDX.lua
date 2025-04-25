@@ -4184,8 +4184,8 @@ end)
 swtc("breakjoints",{
 	{value=1,text="breakjoints+health"},
 	{value=2,text="health or breakjoints"},
-	{value=3,text="breakjoints"},
-	{value=4,text="ReplicatedBreakjoints+health"}
+	{value=3,text="ReplicatedBreakjoints+health"},
+	{value=4,text="breakjoints"}
 },function(v)
 	breakjointsmethod=v
 end)
