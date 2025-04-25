@@ -6,7 +6,7 @@
         [-             Updates               -]
         [                                     ]
         [    Added Hatdrop!                   ] 
-        [                                     ]
+        [    Added RBreakjoints!              ]
         [                                     ]
         [                                     ]
         [                                     ]
@@ -4172,7 +4172,8 @@ end)
 swtc("breakjoints",{
 	{value=1,text="breakjoints+health"},
 	{value=2,text="health or breakjoints"},
-	{value=3,text="breakjoints"}
+	{value=3,text="breakjoints"},
+	{value=4,text="ReplicatedBreakjoints+health"}
 },function(v)
 	breakjointsmethod=v
 end)
