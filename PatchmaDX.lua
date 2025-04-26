@@ -3363,6 +3363,7 @@ btn("Immortality Lord", function()
 	local getAccWeldFromMesh=t.getAccWeldFromMesh
 	local setWalkSpeed=t.setWalkSpeed
 	local fling=t.fling
+	local rad=math.rad
 
 	Neck.C1=cf(0,-1,0,-1,0,0,0,0,1,0,1,-0)
 	RootJoint.C1=cf(0,0,0,-1,0,0,0,0,1,0,1,-0)
@@ -3375,12 +3376,11 @@ btn("Immortality Lord", function()
 	t.setJumpPower(0)
 	t.setHipHeight(7)
 	t.setGravity(math.huge)
-		
-        if ILmusic then
-        fireup()
-        end
-	
 
+	if ILmusic then
+        fireup()
+	end
+		
 	local torso=t.getPart("Torso")
 	local rootpart=t.getPart("HumanoidRootPart")
 
@@ -3393,7 +3393,7 @@ btn("Immortality Lord", function()
 	leftWingAccWeld.Part1=leftWingPart
 
 	local LeftWing={
-		C0=cf(-.3,1,1)*angles(0,rad(90),0),
+		C0=cf(-.3,1,1)*angles(0,1.5707963267948966,0),
 		C1=cf(2.2,2,1.5),
 		Part0=torso,
 		Part1=leftWingPart
@@ -3409,7 +3409,7 @@ btn("Immortality Lord", function()
 	rightWingAccWeld.Part1=rightWingPart
 
 	local RightWing={
-		C0=cf(.3,1,1)*angles(0,rad(90),0),
+		C0=cf(.3,1,1)*angles(0,1.5707963267948966,0),
 		C1=cf(2.2,2,-1.5),
 		Part0=torso,
 		Part1=rightWingPart
@@ -3436,10 +3436,10 @@ btn("Immortality Lord", function()
 	}
 	tinsert(joints,Sword)
 
-	local DefaultsNeckC0 = cf(0,2,0)*angles(rad(-90),0,rad(180))
-	local DefaultsRootJointC0 = angles(rad(-90),0,rad(180))
-	local DefaultsRightShoulderC0 = cf(-1,0,0)*angles(0,rad(90),0)
-	local DefaultsLeftShoulderC0 = cf(1,0,0)*angles(0,rad(-90),0)
+	local DefaultsNeckC0 = cf(0,2,0)*angles(-1.5707963267948966,0,3.141592653589793)
+	local DefaultsRootJointC0 = angles(-1.5707963267948966,0,3.141592653589793)
+	local DefaultsRightShoulderC0 = cf(-1,0,0)*angles(0,1.5707963267948966,0)
+	local DefaultsLeftShoulderC0 = cf(1,0,0)*angles(0,-1.5707963267948966,0)
 
 	local TimingSine=sine*60
 	local attacking=false
@@ -3498,38 +3498,38 @@ btn("Immortality Lord", function()
 				neckSnap = true
 			end
 			if onground and not flycf then
-				RightShoulder.C0 = Lerp1(RightShoulder.C0,cf(3,1,0)*angles(rad(-10),0,0)*DefaultsRightShoulderC0,.25)
+				RightShoulder.C0 = Lerp1(RightShoulder.C0,cf(3,1,0)*angles(-0.17453292519943295,0,0)*DefaultsRightShoulderC0,.25)
 				Sword.C0 = Lerp1(Sword.C0,cf(0,-2,0)*angles(rad(154.35-5.65*sin(TimingSine/25)),0,0),.25)
 			else
-				RightShoulder.C0 = Lerp1(RightShoulder.C0,cf(3,1,0)*angles(rad(80+5*cos(TimingSine/25)),0,rad(45))*DefaultsRightShoulderC0,.25)
-				Sword.C0 = Lerp1(Sword.C0,cf(0,-0,-1)*angles(0,rad(170),rad(-10)),.25)
+				RightShoulder.C0 = Lerp1(RightShoulder.C0,cf(3,1,0)*angles(rad(80+5*cos(TimingSine/25)),0,0.7853981633974483)*DefaultsRightShoulderC0,.25)
+				Sword.C0 = Lerp1(Sword.C0,cf(0,-0,-1)*angles(0,2.9670597283903604,-0.17453292519943295),.25)
 			end
-			RootJoint.C0 = Lerp1(RootJoint.C0,DefaultsRootJointC0*cf(0,0,-sin(TimingSine/25))*angles(rad(20),0,0),.25)
-			LeftShoulder.C0 = Lerp1(LeftShoulder.C0,cf(-3,1,0)*angles(rad(20),0,rad(-10-10*cos(TimingSine/25)))*DefaultsLeftShoulderC0,.25)
-			RightHip.C0 = Lerp1(RightHip.C0,cf(2,-2,0)*angles(rad(-20),rad(80),rad(10+10*cos(TimingSine/25))),.25)
-			LeftHip.C0 = Lerp1(LeftHip.C0,cf(-2,-2,0)*angles(rad(-10),rad(-80),rad(-10-10*cos(TimingSine/25))),.25)
+			RootJoint.C0 = Lerp1(RootJoint.C0,DefaultsRootJointC0*cf(0,0,-sin(TimingSine/25))*angles(0.3490658503988659,0,0),.25)
+			LeftShoulder.C0 = Lerp1(LeftShoulder.C0,cf(-3,1,0)*angles(0.3490658503988659,0,rad(-10-10*cos(TimingSine/25)))*DefaultsLeftShoulderC0,.25)
+			RightHip.C0 = Lerp1(RightHip.C0,cf(2,-2,0)*angles(-0.3490658503988659,1.3962634015954636,rad(10+10*cos(TimingSine/25))),.25)
+			LeftHip.C0 = Lerp1(LeftHip.C0,cf(-2,-2,0)*angles(-0.17453292519943295,-1.3962634015954636,rad(-10-10*cos(TimingSine/25))),.25)
 		else
-			RootJoint.C0 = Lerp1(RootJoint.C0,DefaultsRootJointC0*cf(0,0,-sin(TimingSine/25))*angles(rad(20),0,0),.25)
+			RootJoint.C0 = Lerp1(RootJoint.C0,DefaultsRootJointC0*cf(0,0,-sin(TimingSine/25))*angles(0.3490658503988659,0,0),.25)
 			if neckSnap then
-				Neck.C0 = DefaultsNeckC0*angles(rad(20),rad(10*sin(TimingSine/50)),0)
+				Neck.C0 = DefaultsNeckC0*angles(0.3490658503988659,rad(10*sin(TimingSine/50)),0)
 				neckSnap = false
 			else
-				Neck.C0 = Lerp1(Neck.C0,DefaultsNeckC0*angles(rad(20),rad(10*sin(TimingSine/50)),0),.25)
+				Neck.C0 = Lerp1(Neck.C0,DefaultsNeckC0*angles(0.3490658503988659,rad(10*sin(TimingSine/50)),0),.25)
 			end
 			if mrandom(15) == 1 then
 				Neck.C0 = DefaultsNeckC0*angles(rad(20+mrandom(-20,20)),rad((10*sin(TimingSine/50))+mrandom(-20,20)),rad(mrandom(-20,20)))
 				neckSnap = true
 			end
 			if onground and not flycf then
-				RightShoulder.C0 = Lerp1(RightShoulder.C0,cf(3,1,0)*angles(rad(-10),0,0)*DefaultsRightShoulderC0,.25)
+				RightShoulder.C0 = Lerp1(RightShoulder.C0,cf(3,1,0)*angles(-0.17453292519943295,0,0)*DefaultsRightShoulderC0,.25)
 				Sword.C0 = Lerp1(Sword.C0,cf(0,-2,0)*angles(rad(154.35-5.65*sin(TimingSine/25)),0,0),.25)
 			else
-				RightShoulder.C0 = Lerp1(RightShoulder.C0,cf(3,1,0)*angles(rad(80+5*cos(TimingSine/25)),0,rad(45))*DefaultsRightShoulderC0,.25)
-				Sword.C0 = Lerp1(Sword.C0,cf(0,0,-1)*angles(0,rad(170),rad(-10)),.25)
+				RightShoulder.C0 = Lerp1(RightShoulder.C0,cf(3,1,0)*angles(rad(80+5*cos(TimingSine/25)),0,0.7853981633974483)*DefaultsRightShoulderC0,.25)
+				Sword.C0 = Lerp1(Sword.C0,cf(0,0,-1)*angles(0,2.9670597283903604,-0.17453292519943295),.25)
 			end
-			LeftShoulder.C0 = Lerp1(LeftShoulder.C0,cf(-3,1,0)*angles(rad(20),0,rad(-10-10*cos(TimingSine/25)))*DefaultsLeftShoulderC0,.25)
-			RightHip.C0 = Lerp1(RightHip.C0,cf(2,-2,0)*angles(rad(10),rad(80),rad(10+10*cos(TimingSine/25))),.25)
-			LeftHip.C0 = Lerp1(LeftHip.C0,cf(-2,-2,0)*angles(rad(20),rad(-80),rad(-10-10*cos(TimingSine/25))),.25)
+			LeftShoulder.C0 = Lerp1(LeftShoulder.C0,cf(-3,1,0)*angles(0.3490658503988659,0,rad(-10-10*cos(TimingSine/25)))*DefaultsLeftShoulderC0,.25)
+			RightHip.C0 = Lerp1(RightHip.C0,cf(2,-2,0)*angles(0.17453292519943295,1.3962634015954636,rad(10+10*cos(TimingSine/25))),.25)
+			LeftHip.C0 = Lerp1(LeftHip.C0,cf(-2,-2,0)*angles(0.3490658503988659,-1.3962634015954636,rad(-10-10*cos(TimingSine/25))),.25)
 		end
 		RightWing.C0 = Lerp1(RightWing.C0,cf(0.3,1,1)*angles(0,rad(105-25*cos(TimingSine/25)),0),.25)
 		LeftWing.C0 = Lerp1(LeftWing.C0,cf(-0.3,1,1)*angles(0,rad(75+25*cos(TimingSine/25)),0),.25)
@@ -3551,7 +3551,7 @@ btn("Immortality Lord", function()
 			attacking=true
 			setWalkSpeed(0)
 			animOverwrite=function()
-				RootJoint.C0 = Lerp1(RootJoint.C0,DefaultsRootJointC0*cf(0,0,-sin(TimingSine/25))*angles(rad(5),0,rad(-20)),.25)
+				RootJoint.C0 = Lerp1(RootJoint.C0,DefaultsRootJointC0*cf(0,0,-sin(TimingSine/25))*angles(0.08726646259971647,0,-0.3490658503988659),.25)
 				if neckSnap then
 					Neck.C0 = DefaultsNeckC0
 					neckSnap = false
@@ -3562,11 +3562,11 @@ btn("Immortality Lord", function()
 					Neck.C0 = DefaultsNeckC0*angles(rad(mrandom(-20,20)),rad(mrandom(-20,20)),rad(mrandom(-20,20)))
 					neckSnap = true
 				end
-				RightShoulder.C0 = Lerp1(RightShoulder.C0,cf(3,1,0)*angles(rad(80),0,rad(50))*DefaultsRightShoulderC0,.25)
-				Sword.C0 = Lerp1(Sword.C0,cf(-1,-1,0)*angles(rad(180),rad(-90),0),.25)
-				LeftShoulder.C0 = Lerp1(LeftShoulder.C0,cf(-3,1,0)*angles(rad(5),0,rad(-10-10*cos(TimingSine/25)))*DefaultsLeftShoulderC0,.25)
-				RightHip.C0 = Lerp1(RightHip.C0,cf(2,-2,0)*angles(rad(-20),rad(80),rad(10+10*cos(TimingSine/25))),.25)
-				LeftHip.C0 = Lerp1(LeftHip.C0,cf(-2,-2,0)*angles(rad(-10),rad(-80),rad(-10-10*cos(TimingSine/25))),.25)
+				RightShoulder.C0 = Lerp1(RightShoulder.C0,cf(3,1,0)*angles(1.3962634015954636,0,0.8726646259971648)*DefaultsRightShoulderC0,.25)
+				Sword.C0 = Lerp1(Sword.C0,cf(-1,-1,0)*angles(3.141592653589793,-1.5707963267948966,0),.25)
+				LeftShoulder.C0 = Lerp1(LeftShoulder.C0,cf(-3,1,0)*angles(0.08726646259971647,0,rad(-10-10*cos(TimingSine/25)))*DefaultsLeftShoulderC0,.25)
+				RightHip.C0 = Lerp1(RightHip.C0,cf(2,-2,0)*angles(-0.3490658503988659,1.3962634015954636,rad(10+10*cos(TimingSine/25))),.25)
+				LeftHip.C0 = Lerp1(LeftHip.C0,cf(-2,-2,0)*angles(-0.17453292519943295,-1.3962634015954636,rad(-10-10*cos(TimingSine/25))),.25)
 			end
 			twait(0.25)
 			local flingpos=cfGet(cfMul(cframes[rootpart],cf(0,0,-9)),"Position")
@@ -3580,7 +3580,7 @@ btn("Immortality Lord", function()
 				end
 			end
 			animOverwrite=function()
-				RootJoint.C0 = Lerp1(RootJoint.C0,DefaultsRootJointC0*cf(0,0,-sin(TimingSine/25))*angles(rad(5),0,rad(20)),.25)
+				RootJoint.C0 = Lerp1(RootJoint.C0,DefaultsRootJointC0*cf(0,0,-sin(TimingSine/25))*angles(0.08726646259971647,0,0.3490658503988659),.25)
 				if neckSnap then
 					Neck.C0 = DefaultsNeckC0
 					neckSnap = false
@@ -3591,11 +3591,11 @@ btn("Immortality Lord", function()
 					Neck.C0 = DefaultsNeckC0*angles(rad(mrandom(-20,20)),rad(mrandom(-20,20)),rad(mrandom(-20,20)))
 					neckSnap = true
 				end
-				RightShoulder.C0 = Lerp1(RightShoulder.C0,cf(2,1,-1)*angles(rad(80),0,rad(-50))*DefaultsRightShoulderC0,.25)
-				Sword.C0 = Lerp1(Sword.C0,cf(-1,-1,0)*angles(rad(180),rad(-90),0),.25)
-				LeftShoulder.C0 = Lerp1(LeftShoulder.C0,cf(-3,1,0)*angles(rad(5),0,rad(-10-10*cos(TimingSine/25)))*DefaultsLeftShoulderC0,.25)
-				RightHip.C0 = Lerp1(RightHip.C0,cf(2,-2,0)*angles(rad(-20),rad(80),rad(10+10*cos(TimingSine/25))),.25)
-				LeftHip.C0 = Lerp1(LeftHip.C0,cf(-2,-2,0)*angles(rad(-10),rad(-80),rad(-10-10*cos(TimingSine/25))),.25)
+				RightShoulder.C0 = Lerp1(RightShoulder.C0,cf(2,1,-1)*angles(1.3962634015954636,0,-0.8726646259971648)*DefaultsRightShoulderC0,.25)
+				Sword.C0 = Lerp1(Sword.C0,cf(-1,-1,0)*angles(3.141592653589793,-1.5707963267948966,0),.25)
+				LeftShoulder.C0 = Lerp1(LeftShoulder.C0,cf(-3,1,0)*angles(0.08726646259971647,0,rad(-10-10*cos(TimingSine/25)))*DefaultsLeftShoulderC0,.25)
+				RightHip.C0 = Lerp1(RightHip.C0,cf(2,-2,0)*angles(-0.3490658503988659,1.3962634015954636,rad(10+10*cos(TimingSine/25))),.25)
+				LeftHip.C0 = Lerp1(LeftHip.C0,cf(-2,-2,0)*angles(-0.17453292519943295,-1.3962634015954636,rad(-10-10*cos(TimingSine/25))),.25)
 			end
 			twait(0.25)
 			setWalkSpeed(32)
@@ -3606,7 +3606,7 @@ btn("Immortality Lord", function()
 			local newpos=cfGet(insGet(mouse,"Hit"),"Position")+v3_010*10
 			local newcf=cfl(newpos,newpos+cfGet(getCamCF(),"LookVector")*v3_101)
 			animOverwrite=function()
-				RootJoint.C0 = Lerp1(RootJoint.C0,DefaultsRootJointC0*cf(0,0,-sin(TimingSine/25))*angles(rad(20),0,0),.25)
+				RootJoint.C0 = Lerp1(RootJoint.C0,DefaultsRootJointC0*cf(0,0,-sin(TimingSine/25))*angles(0.3490658503988659,0,0),.25)
 				if neckSnap then
 					Neck.C0 = DefaultsNeckC0
 					neckSnap = false
@@ -3617,16 +3617,16 @@ btn("Immortality Lord", function()
 					Neck.C0 = DefaultsNeckC0*angles(rad(mrandom(-20,20)),rad(mrandom(-20,20)),rad(mrandom(-20,20)))
 					neckSnap = true
 				end
-				RightShoulder.C0 = Lerp1(RightShoulder.C0,cf(3,1,0)*angles(rad(80+5*cos(TimingSine/25)),0,rad(45))*DefaultsRightShoulderC0,.25)
-				Sword.C0 = Lerp1(Sword.C0,cf(0,-0,-1)*angles(0,rad(170),rad(-10)),.25)
-				LeftShoulder.C0 = Lerp1(LeftShoulder.C0,cf(-3,1,0)*angles(rad(20),0,rad(-10-10*cos(TimingSine/25)))*DefaultsLeftShoulderC0,.25)
-				RightHip.C0 = Lerp1(RightHip.C0,cf(2,-2,0)*angles(rad(-20),rad(80),rad(10+10*cos(TimingSine/25))),.25)
-				LeftHip.C0 = Lerp1(LeftHip.C0,cf(-2,-2,0)*angles(rad(-10),rad(-80),rad(-10-10*cos(TimingSine/25))),.25)
+				RightShoulder.C0 = Lerp1(RightShoulder.C0,cf(3,1,0)*angles(rad(80+5*cos(TimingSine/25)),0,0.7853981633974483)*DefaultsRightShoulderC0,.25)
+				Sword.C0 = Lerp1(Sword.C0,cf(0,-0,-1)*angles(0,2.9670597283903604,-0.17453292519943295),.25)
+				LeftShoulder.C0 = Lerp1(LeftShoulder.C0,cf(-3,1,0)*angles(0.3490658503988659,0,rad(-10-10*cos(TimingSine/25)))*DefaultsLeftShoulderC0,.25)
+				RightHip.C0 = Lerp1(RightHip.C0,cf(2,-2,0)*angles(-0.3490658503988659,1.3962634015954636,rad(10+10*cos(TimingSine/25))),.25)
+				LeftHip.C0 = Lerp1(LeftHip.C0,cf(-2,-2,0)*angles(-0.17453292519943295,-1.3962634015954636,rad(-10-10*cos(TimingSine/25))),.25)
 			end
 			twait(0.5)
 			local animStart=sine
 			animOverwrite=function()
-				RootJoint.C0 = Lerp1(RootJoint.C0,DefaultsRootJointC0*cf(0,0,-20*(.5+sine-animStart))*angles(rad(20),0,0),.25)
+				RootJoint.C0 = Lerp1(RootJoint.C0,DefaultsRootJointC0*cf(0,0,-20*(.5+sine-animStart))*angles(0.3490658503988659,0,0),.25)
 				if neckSnap then
 					Neck.C0 = DefaultsNeckC0
 					neckSnap = false
@@ -3637,11 +3637,11 @@ btn("Immortality Lord", function()
 					Neck.C0 = DefaultsNeckC0*angles(rad(mrandom(-20,20)),rad(mrandom(-20,20)),rad(mrandom(-20,20)))
 					neckSnap = true
 				end
-				RightShoulder.C0 = Lerp1(RightShoulder.C0,cf(3,1,0)*angles(rad(80+5*cos(TimingSine/25)),0,rad(45))*DefaultsRightShoulderC0,.25)
-				Sword.C0 = Lerp1(Sword.C0,cf(0,-0,-1)*angles(0,rad(170),rad(-10)),.25)
-				LeftShoulder.C0 = Lerp1(LeftShoulder.C0,cf(-3,1,0)*angles(rad(20),0,rad(-10-10*cos(TimingSine/25)))*DefaultsLeftShoulderC0,.25)
-				RightHip.C0 = Lerp1(RightHip.C0,cf(2,-2,0)*angles(rad(-20),rad(80),rad(10+10*cos(TimingSine/25))),.25)
-				LeftHip.C0 = Lerp1(LeftHip.C0,cf(-2,-2,0)*angles(rad(-10),rad(-80),rad(-10-10*cos(TimingSine/25))),.25)
+				RightShoulder.C0 = Lerp1(RightShoulder.C0,cf(3,1,0)*angles(rad(80+5*cos(TimingSine/25)),0,0.7853981633974483)*DefaultsRightShoulderC0,.25)
+				Sword.C0 = Lerp1(Sword.C0,cf(0,-0,-1)*angles(0,2.9670597283903604,-0.17453292519943295),.25)
+				LeftShoulder.C0 = Lerp1(LeftShoulder.C0,cf(-3,1,0)*angles(0.3490658503988659,0,rad(-10-10*cos(TimingSine/25)))*DefaultsLeftShoulderC0,.25)
+				RightHip.C0 = Lerp1(RightHip.C0,cf(2,-2,0)*angles(-0.3490658503988659,1.3962634015954636,rad(10+10*cos(TimingSine/25))),.25)
+				LeftHip.C0 = Lerp1(LeftHip.C0,cf(-2,-2,0)*angles(-0.17453292519943295,-1.3962634015954636,rad(-10-10*cos(TimingSine/25))),.25)
 			end
 			twait(0.5)
 			if flycf then
@@ -3655,7 +3655,7 @@ btn("Immortality Lord", function()
 			animStart=sine
 
 			animOverwrite=function()
-				RootJoint.C0 = Lerp1(RootJoint.C0,DefaultsRootJointC0*cf(0,0,(-sin(TimingSine/25))-(10-(sine-animStart)*20))*angles(rad(20),0,0),.25)
+				RootJoint.C0 = Lerp1(RootJoint.C0,DefaultsRootJointC0*cf(0,0,(-sin(TimingSine/25))-(10-(sine-animStart)*20))*angles(0.3490658503988659,0,0),.25)
 				if neckSnap then
 					Neck.C0 = DefaultsNeckC0
 					neckSnap = false
@@ -3666,11 +3666,11 @@ btn("Immortality Lord", function()
 					Neck.C0 = DefaultsNeckC0*angles(rad(mrandom(-20,20)),rad(mrandom(-20,20)),rad(mrandom(-20,20)))
 					neckSnap = true
 				end
-				RightShoulder.C0 = Lerp1(RightShoulder.C0,cf(3,1,0)*angles(rad(80+5*cos(TimingSine/25)),0,rad(45))*DefaultsRightShoulderC0,.25)
-				Sword.C0 = Lerp1(Sword.C0,cf(0,-0,-1)*angles(0,rad(170),rad(-10)),.25)
-				LeftShoulder.C0 = Lerp1(LeftShoulder.C0,cf(-3,1,0)*angles(rad(20),0,rad(-10-10*cos(TimingSine/25)))*DefaultsLeftShoulderC0,.25)
-				RightHip.C0 = Lerp1(RightHip.C0,cf(2,-2,0)*angles(rad(-20),rad(80),rad(10+10*cos(TimingSine/25))),.25)
-				LeftHip.C0 = Lerp1(LeftHip.C0,cf(-2,-2,0)*angles(rad(-10),rad(-80),rad(-10-10*cos(TimingSine/25))),.25)
+				RightShoulder.C0 = Lerp1(RightShoulder.C0,cf(3,1,0)*angles(rad(80+5*cos(TimingSine/25)),0,0.7853981633974483)*DefaultsRightShoulderC0,.25)
+				Sword.C0 = Lerp1(Sword.C0,cf(0,-0,-1)*angles(0,2.9670597283903604,-0.17453292519943295),.25)
+				LeftShoulder.C0 = Lerp1(LeftShoulder.C0,cf(-3,1,0)*angles(0.3490658503988659,0,rad(-10-10*cos(TimingSine/25)))*DefaultsLeftShoulderC0,.25)
+				RightHip.C0 = Lerp1(RightHip.C0,cf(2,-2,0)*angles(-0.3490658503988659,1.3962634015954636,rad(10+10*cos(TimingSine/25))),.25)
+				LeftHip.C0 = Lerp1(LeftHip.C0,cf(-2,-2,0)*angles(-0.17453292519943295,-1.3962634015954636,rad(-10-10*cos(TimingSine/25))),.25)
 			end
 			twait(0.5)
 			setWalkSpeed(32)
