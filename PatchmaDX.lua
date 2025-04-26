@@ -128,15 +128,17 @@ mdownload("https://github.com/MrBwoken/Music-/raw/refs/heads/main/Immortality%20
 mdownload("https://github.com/MrBwoken/Music-/raw/refs/heads/main/Immortality%20Lord/ImmortalityLord3.mp3", "IL3.mp3")
 end
 
-if loadstringsupport then
+
 -- Fire UP
 local fireup = function()
+if loadstringsupport then
 downloadsongs()
 mloopplaylist("IL.mp3", "IL2.mp3", "IL3.mp3")
-end
 else
-	-- Do nothing.
+		-- Do nothing.
 end
+end
+
 
 
 
