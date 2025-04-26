@@ -90,10 +90,10 @@ end)
 spawn(function()
 if getgenv().getcustomasset then
     print("✅ Your executor supports `getcustomasset`!")
-    music = true
+    ILmusic = true
 else
     print("❌ Your executor doesn't support `getcustomasset`!")
-    music = false
+    ILmusic = false
 end
 end)	
 
@@ -140,7 +140,7 @@ end
 end
 
 local firedown = function()
-	if music then
+	if ILmusic then
 		mstop()
 	else
 		-- Do nothing.
@@ -3376,7 +3376,7 @@ btn("Immortality Lord", function()
 	t.setHipHeight(7)
 	t.setGravity(math.huge)
 		
-        if music then
+        if ILmusic then
         fireup()
         end
 	
@@ -4116,7 +4116,7 @@ swtc("Music",{
 	{value=true,text="Yes!"},
 	{value=false,text="No!"}
 },function(v)
-	music=v
+	ILmusic=v
 end)
 
 swtc("Auto Refit",{
