@@ -139,7 +139,13 @@ else
 end
 end
 
-
+local firedown = function()
+	if music then
+		mstop()
+	else
+		-- Do nothing.
+	end
+end
 
 
 
@@ -889,6 +895,7 @@ local c=nil
 local stopreanimate=function() 
 	if c then
 		c=nil
+		firedown()
 		return true
 	end
 	return false
