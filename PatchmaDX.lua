@@ -887,7 +887,6 @@ local c=nil
 local stopreanimate=function() 
 	if c then
 		c=nil
-                mstop()
 		return true
 	end
 	return false
