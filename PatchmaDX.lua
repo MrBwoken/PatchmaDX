@@ -883,13 +883,6 @@ local simrad=false
 local hidedeatheffect=nil
 local arefit = true
 
--- Switch to ReplicatedBreakJoints dynamically.
-if support then
-	local breakjointsmethod=3
-else
-	-- Do nothing.
-end
-
 local c=nil
 local stopreanimate=function() 
 	if c then
@@ -1434,7 +1427,7 @@ local reanimate=function()
 						else
 							insGet(newc,"BreakJoints")(newc)
 						end
-					elseif breakjointsmethod==3 then
+					elseif breakjointsmethod==0 then
 						        repbreakjoints()
 					else
 						insGet(newc,"BreakJoints")(newc)
@@ -4203,10 +4196,10 @@ swtc("New Character Scripts",{
 end)
 
 swtc("breakjoints",{
+	{value=0,text="Dynamic"},
 	{value=1,text="breakjoints+health"},
 	{value=2,text="health or breakjoints"},
-	{value=3,text="ReplicatedBreakjoints+health"},
-	{value=4,text="breakjoints"}
+	{value=3,text="breakjoints"}
 },function(v)
 	breakjointsmethod=v
 end)
