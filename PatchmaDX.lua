@@ -110,13 +110,15 @@ end
 end)	
 
 -- Music Handler
-if loadstringsupport then
 spawn(function()
+task.wait(0.20)
+		if loadstringsupport then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/MrBwoken/Handlers/refs/heads/main/%3C%7CX%7C%3E%20M%20%3C%7CZ%7C%3E%20(music%20handler)"))()
+		else
+			-- Do nothing.
+		end
 end)
-else
-      -- Do nothing.
-end
+
 
 
 
