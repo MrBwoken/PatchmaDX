@@ -154,7 +154,7 @@ local repbreakjoints = function()
 	else
 	-- Do nothing.
 	end
-
+end
 
 
 local USE_METAMETHOD_OPTIMIZATIONS = true
