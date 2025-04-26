@@ -37,6 +37,7 @@ ________________________________________________________________________
 -- mloopplaylist(song1, song2, song3, ...) for looping a playlist
 -- mskip(number) to skip a specified number of songs
 -----------------------------------------------------------------------
+|                                                                     |
        
 ]]
 
@@ -858,7 +859,7 @@ lbl("")
 spawn(function()
 task.wait(.1)		
 -- for the skids
-if support == true then
+if support then
 	-- Nothing at ducking all!
 else
 	lbl("Permadeath not supported!")
@@ -882,7 +883,12 @@ local simrad=false
 local hidedeatheffect=nil
 local arefit = true
 
-
+-- Switch to ReplicatedBreakJoints dynamically.
+if support then
+	local breakjointsmethod=3
+else
+	-- Do nothing.
+end
 
 local c=nil
 local stopreanimate=function() 
