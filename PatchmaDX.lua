@@ -149,7 +149,7 @@ local firesignal = function()
 end
 
 local repbreakjoints = function()
-	if support = true then
+	if support then
 	replicatesignal(game.Players.LocalPlayer.Character.Humanoid.ServerBreakJoints)
 	else
 	-- Do nothing.
