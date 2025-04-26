@@ -6,7 +6,6 @@
         -- All rigs in https://www.roblox.com/games/14133411956/Foundation should work, if not make an issue. --
 ]]
 
-
 --no need to get and index the library tables with function names every time the script uses them
 local osclock=os.clock
 local tspawn=task.spawn
@@ -149,6 +148,7 @@ local guiTheme={
 	listBottomColor=c3(0.0705882,0.0705882,0.0705882)
 }
 
+
 local accessorylimbs={
 	{meshid="11263221350",textureid="11263219250",C0=angles(1.5707963267948966,0,1.5707963267948966),Name="Left Arm"},
 	{meshid="11159370334",textureid="11159284657",C0=angles(-1.5707963267948966,0,1.5707963267948966),Name="Right Arm"},
@@ -216,7 +216,6 @@ local accessorylimbs={
 	{meshid="99608462237958",textureid="130809869695496",C0=angles(0,0,1.57),Name="Left Arm"},
 	{meshid="139733645770094",textureid="130809869695496",C0=angles(0,0,1.57),Name="Right Arm"},
 	{meshid="110684113028749",textureid="70661572547971",C0=angles(0,0,1.57),Name="Torso"},
-        
 }
 
 local gp=function(p,n,cl)
